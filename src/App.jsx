@@ -1,9 +1,18 @@
+import Footer from './components/Footer.jsx'
+import Header from './components/Header.jsx'
+import Body from './components/Body.jsx'
 import { useState } from 'react'
-import './App.css'
 
 export default function App() {
+    const [currentPage, setPage] = useState('Default Page')
+
     return(
-        <Footer />
+        <>
+        <Header />
+        <Body />
+        <Footer setPage={setPage}/>
+    
+        </>
     )
 }
 
