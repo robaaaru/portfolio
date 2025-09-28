@@ -4,12 +4,12 @@ import Body from './components/Body.jsx'
 import { useState } from 'react'
 
 export default function App() {
-    const [currentPage, setPage] = useState('Default Page')
+    const [page, setPage] = useState(1)
 
     return(
         <>
         <Header />
-        <Body />
+    
         <Footer setPage={setPage}/>
     
         </>
