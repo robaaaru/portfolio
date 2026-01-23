@@ -6,6 +6,13 @@
   overflow-x: hidden;
 }
 
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 200ms ease, color 200ms ease;
+  overflow-x: hidden;
+}
+
 @theme {
   --font-head: 'Archivo Black', sans-serif;
   --font-sans: 'Space Grotesk', sans-serif;

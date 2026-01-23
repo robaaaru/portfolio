@@ -4,7 +4,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
   const strokeWidth = 1.8;
 
   const baseIconClasses =
-    "stroke-gray-700 w-[1.3rem] h-[1.3rem] md:w-[1.445rem] md:h-[1.445rem] lg:w-[1.7rem] lg:h-[1.75rem] transition-colors duration-175 ease-in cursor-pointer";
+    "w-[1.3rem] h-[1.3rem] md:w-[1.445rem] md:h-[1.445rem] lg:w-[1.7rem] lg:h-[1.75rem] transition-colors duration-175 ease-in cursor-pointer";
   const wrapperClasses = "flex flex-col items-center justify-center relative";
 
   const icons = [
@@ -20,7 +20,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
   };
 
   return (
-    <footer className="fixed bottom-0 w-full p-2 md:p-4 lg:p-5 h-13 md:h-15 lg:h-18 backdrop-blur-2xl">
+    <footer className="fixed bottom-0 w-full p-2 md:p-4 lg:p-5 h-13 md:h-15 lg:h-18 backdrop-blur-2xl" style={{ backgroundColor: "var(--background)", color: "var(--foreground)", borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
       <div className="flex justify-center items-center gap-6">
         {icons.map(({ icon: Icon, key, label }, index) => (
           <button
@@ -32,12 +32,20 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
           >
             <Icon
               strokeWidth={strokeWidth}
-              className={`${baseIconClasses} ${
-                activePage === index ? "stroke-[#048688]" : "hover:stroke-[#048688]"
-              }`}
+              className={baseIconClasses}
+              style={{
+                stroke: activePage === index ? "#048688" : "var(--muted-foreground)",
+                transition: "stroke 200ms ease",
+              }}
+              onMouseEnter={(e) => {
+                if (activePage !== index) e.currentTarget.style.stroke = "#048688";
+              }}
+              onMouseLeave={(e) => {
+                if (activePage !== index) e.currentTarget.style.stroke = "var(--muted-foreground)";
+              }}
             />
             {activePage === index && (
-              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1 animate-in fade-in duration-300"></div>
+              <div className="w-1.5 h-1.5 rounded-full mt-1 animate-in fade-in duration-300" style={{ backgroundColor: "var(--primary)" }}></div>
             )}
           </button>
         ))}
