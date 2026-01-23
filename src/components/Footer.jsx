@@ -20,7 +20,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
   };
 
   return (
-    <footer className="fixed bottom-0 w-full p-2 md:p-4 lg:p-5 h-13 md:h-15 lg:h-18 backdrop-blur-2xl" style={{ backgroundColor: "var(--background)", color: "var(--foreground)", borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+    <footer className="fixed bottom-0 w-full p-2 md:p-4 lg:p-5 h-13 md:h-15 lg:h-18 backdrop-blur-2xl overflow-hidden" style={{ backgroundColor: "var(--background)", color: "var(--foreground)", borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
       <div className="flex justify-center items-center gap-6">
         {icons.map(({ icon: Icon, key, label }, index) => (
           <button
@@ -34,18 +34,18 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
               strokeWidth={strokeWidth}
               className={baseIconClasses}
               style={{
-                stroke: activePage === index ? "#048688" : "var(--muted-foreground)",
+                stroke: activePage === index ? "#048688" : "var(--icon-muted)",
                 transition: "stroke 200ms ease",
               }}
               onMouseEnter={(e) => {
                 if (activePage !== index) e.currentTarget.style.stroke = "#048688";
               }}
               onMouseLeave={(e) => {
-                if (activePage !== index) e.currentTarget.style.stroke = "var(--muted-foreground)";
+                if (activePage !== index) e.currentTarget.style.stroke = "var(--icon-muted)";
               }}
             />
             {activePage === index && (
-              <div className="w-1.5 h-1.5 rounded-full mt-1 animate-in fade-in duration-300" style={{ backgroundColor: "var(--primary)" }}></div>
+              <div className="w-1.5 h-1.5 rounded-full mt-1 animate-in fade-in duration-300" style={{ backgroundColor: "#048688" }}></div>
             )}
           </button>
         ))}
