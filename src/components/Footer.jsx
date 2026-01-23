@@ -1,8 +1,6 @@
 import { Square, PanelsTopLeft, Building, SquarePen, SquareUser } from "lucide-react";
-import { useState } from "react";
 
-export default function Footer({ setPage }) {
-  const [activePage, setActivePage] = useState(0);
+export default function Footer({ setPage, activePage = 0, labels = [] }) {
   const strokeWidth = 1.8;
 
   const baseIconClasses =
@@ -10,27 +8,27 @@ export default function Footer({ setPage }) {
   const wrapperClasses = "flex flex-col items-center justify-center relative";
 
   const icons = [
-    { icon: Square, key: "Square" },
-    { icon: PanelsTopLeft, key: "PanelsTopLeft" },
-    { icon: Building, key: "Building" },
-    { icon: SquarePen, key: "SquarePen" },
-    { icon: SquareUser, key: "SquareUser" },
-  ];
+    { icon: Square, key: "home" },
+    { icon: PanelsTopLeft, key: "dashboard" },
+    { icon: Building, key: "offices" },
+    { icon: SquarePen, key: "drafts" },
+    { icon: SquareUser, key: "profile" },
+  ].map((item, index) => ({ ...item, label: labels[index] || item.key }));
 
   const handlePageChange = (index) => {
-    setActivePage(index);
     setPage(index);
   };
 
   return (
     <footer className="fixed bottom-0 w-full p-2 md:p-4 lg:p-5 h-13 md:h-15 lg:h-18 backdrop-blur-2xl">
       <div className="flex justify-center items-center gap-6">
-        {icons.map(({ icon: Icon, key }, index) => (
+        {icons.map(({ icon: Icon, key, label }, index) => (
           <button
             key={key}
             onClick={() => handlePageChange(index)}
             className={wrapperClasses}
-            aria-label={key}
+            aria-label={label}
+            title={label}
           >
             <Icon
               strokeWidth={strokeWidth}
