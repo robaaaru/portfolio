@@ -64,6 +64,7 @@ html, body {
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #000;
+  --card-border: #000;
 }
  
 .dark {
@@ -85,4 +86,5 @@ html, body {
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #3a3a3a;
+  --card-border: #fff;
 }

@@ -5,10 +5,14 @@ function ProjectCard({ title, description, techStack, url }) {
     return (
         <a 
             href={url} 
-            className="block p-4 rounded border-2 border-black cursor-pointer shadow-md hover:shadow-none hover:translate-y-1 transition-all duration-200"
+            className="block p-4 rounded border cursor-pointer hover:translate-y-1 transition-all duration-200"
             style={{ 
-                backgroundColor: "var(--card)", 
+                backgroundColor: "var(--card)",
+                borderColor: "var(--card-border)",
+                boxShadow: "2px 2px 0 0 var(--card-border)",
             }}
+            onMouseEnter={(e) => e.currentTarget.style.boxShadow = "none"}
+            onMouseLeave={(e) => e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)"}
         >
             <h3 className="text-lg font-semibold mb-2 font-head" style={{ color: "var(--foreground)" }}>
                 {title}

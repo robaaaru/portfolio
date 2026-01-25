@@ -6,9 +6,9 @@ const badgeVariants = cva("font-semibold rounded", {
   variants: {
     variant: {
       default: "bg-muted text-muted-foreground",
-      outline: "outline-2 outline-foreground text-foreground",
+      outline: "border",
       solid: "bg-foreground text-background",
-      surface: "outline-2 bg-primary text-primary-foreground",
+      surface: "border bg-primary text-primary-foreground",
     },
     size: {
       sm: "px-2 py-1 text-xs",
@@ -29,8 +29,17 @@ export function Badge({
   className = "",
   ...props
 }) {
+  const variantStyles = variant === "outline" ? {
+    borderColor: "var(--foreground)",
+    color: "var(--foreground)",
+  } : {};
+
   return (
-    <span className={cn(badgeVariants({ variant, size }), className)} {...props}>
+    <span 
+      className={cn(badgeVariants({ variant, size }), className)} 
+      style={variantStyles}
+      {...props}
+    >
       {children}
     </span>
   );
