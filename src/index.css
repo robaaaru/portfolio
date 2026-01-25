@@ -1,8 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Masonry effect for project cards */
+.masonry {
+  column-count: 1;
+  column-gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+/* Remove 3-column layout for lg screens, keep 2 columns for md and up */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
 *{
   font-family: 'Space Grotesk', sans-serif;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, fill 300ms ease, stroke 300ms ease;
 }
 
 html {
@@ -12,7 +30,6 @@ html {
 html, body {
   background-color: var(--background);
   color: var(--foreground);
-  transition: background-color 200ms ease, color 200ms ease;
   overflow-x: hidden;
 }
 
@@ -64,6 +81,7 @@ html, body {
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #000;
+  --card-border: #000;
 }
  
 .dark {
@@ -85,4 +103,5 @@ html, body {
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #3a3a3a;
+  --card-border: #fff;
 }

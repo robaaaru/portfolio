@@ -1,17 +1,63 @@
 import Card from './ui/Card'
+import ProjectDetail from './ui/ProjectDetail'
+import Home from './ui/Home'
+import { useState, useEffect, useRef } from 'react'
+import ExperienceList from './ui/ExperienceList'
 
-export default function Body({activePage}){
+export default function Body({activePage, selectedProject, setSelectedProject}){
+    const [isVisible, setIsVisible] = useState(true)
+    const [displayedPage, setDisplayedPage] = useState(activePage)
+    const [displayedProject, setDisplayedProject] = useState(selectedProject)
+    const isFirstRender = useRef(true)
+
+    // Handle page transitions
+    useEffect(() => {
+        // Skip transition on first render
+        if (isFirstRender.current) {
+            isFirstRender.current = false
+            return
+        }
+
+        // Fade out
+        setIsVisible(false)
+        
+        // After fade out, update content and fade in
+        const timer = setTimeout(() => {
+            setDisplayedPage(activePage)
+            setDisplayedProject(selectedProject)
+            // Small delay before fading in
+            setTimeout(() => {
+                setIsVisible(true)
+            }, 50)
+        }, 150)
+
+        return () => clearTimeout(timer)
+    }, [activePage, selectedProject])
+    
+    // If a project is selected, show the project detail view
+    if (displayedProject) {
+        return (
+            <main className="min-h-screen pt-16 pb-20 md:pt-18 md:pb-22 lg:pt-20 lg:pb-24 px-3" style={{ backgroundColor: "var(--background)" }}>
+                <div 
+                    style={{ 
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'opacity 200ms ease-out, transform 200ms ease-out'
+                    }}
+                >
+                    <ProjectDetail project={displayedProject} />
+                </div>
+            </main>
+        )
+    }
     
     const content = (() => {
-        switch(activePage){
-            case 0: return (
-                <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[50rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, laborumasdasdasdas
-                </div>
-            )
-            case 1: return <Card />
+        switch(displayedPage){
+            case 0: return <Home />
+            case 1: return <Card onSelectProject={setSelectedProject} />
+            case 2: return (<ExperienceList />)
             default: return (
-                <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[50rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+                <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
                     Content coming soon.
                 </div>
             )
@@ -20,7 +66,15 @@ export default function Body({activePage}){
 
     return (
         <main className="min-h-screen pt-16 pb-20 md:pt-18 md:pb-22 lg:pt-20 lg:pb-24 px-3" style={{ backgroundColor: "var(--background)" }}>
-            {content}
+            <div 
+                style={{ 
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 200ms ease-out, transform 200ms ease-out'
+                }}
+            >
+                {content}
+            </div>
         </main>
     )
 }
