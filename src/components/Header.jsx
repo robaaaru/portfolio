@@ -50,9 +50,11 @@ export default function Header({ activePage = 0, labels = [], onNavigate }){
 
     const toggleTheme = () => setTheme((prev) => prev === "dark" ? "light" : "dark")
 
+    const bgTransparent = theme === "dark" ? "rgba(26, 26, 26, 0.15)" : "rgba(255, 255, 255, 0.15)"
+
     return(
-        <header className="fixed top-0 w-full overflow-hidden" style={{ backgroundColor: "var(--background)", color: "var(--foreground)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
-            <div className="mx-auto w-full md:w-[45rem] p-3 md:p-4 h-13 md:h-15 lg:p-5 lg:h-18 border-b-1 backdrop-blur-2xl overflow-hidden" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+        <header className="fixed top-0 w-full" style={{ backgroundColor: bgTransparent, color: "var(--foreground)", backdropFilter: "blur(32px)", WebkitBackdropFilter: "blur(32px)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+            <div className="mx-auto w-full md:w-[45rem] p-3 md:p-4 h-13 md:h-15 lg:p-5 lg:h-18 border-b-1 overflow-hidden" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
             <div className="flex items-center justify-between gap-2 h-full overflow-hidden">
                 <Breadcrumb>
                     <BreadcrumbList style={{ color: "var(--foreground)" }}>

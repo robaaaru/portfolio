@@ -48,10 +48,11 @@ html, body {
  
 :root {
   --background: #fff;
+  --background-transparent: rgba(255, 255, 255, 0.8);
   --foreground: #000;
   --card: #fff;
   --card-foreground: #000;
-  --icon-muted: var(--muted-foreground);
+  --icon-muted: #000;
   --primary: #ffdb33;
   --primary-hover: #ffcc00;
   --primary-foreground: #000;
@@ -68,6 +69,7 @@ html, body {
  
 .dark {
   --background: #1a1a1a;
+  --background-transparent: rgba(26, 26, 26, 0.8);
   --foreground: #f5f5f5;
   --card: #242424;
   --card-foreground: #f5f5f5;
