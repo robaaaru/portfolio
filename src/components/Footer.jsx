@@ -14,7 +14,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
     return () => observer.disconnect();
   }, []);
 
-  const strokeWidth = 1.8;
+  const strokeWidth = 2;
 
   const bgTransparent = isDark ? "rgba(26, 26, 26, 0.15)" : "rgba(255, 255, 255, 0.15)";
 
@@ -36,7 +36,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
 
   return (
     <footer className="fixed bottom-0 w-full overflow-visible" style={{ backgroundColor: bgTransparent, color: "var(--foreground)", backdropFilter: "blur(32px)", WebkitBackdropFilter: "blur(32px)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
-      <div className="mx-auto w-full md:w-[45rem] px-3 md:px-4 lg:px-5 h-13 md:h-15 lg:h-18 border-t-1" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+      <div className="mx-auto w-full md:w-[45rem] px-3 md:px-4 lg:px-5 h-13 md:h-15 lg:h-18 border-t-2" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
         <div className="flex justify-center items-center gap-6 h-full">
           {icons.map(({ icon: Icon, key, label }, index) => (
             <button

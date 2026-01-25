@@ -3,6 +3,7 @@
 
 *{
   font-family: 'Space Grotesk', sans-serif;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, fill 300ms ease, stroke 300ms ease;
 }
 
 html {
@@ -12,7 +13,6 @@ html {
 html, body {
   background-color: var(--background);
   color: var(--foreground);
-  transition: background-color 200ms ease, color 200ms ease;
   overflow-x: hidden;
 }
 

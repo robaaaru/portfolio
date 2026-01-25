@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Portfolio Website",
+        "description": "A personal portfolio showcasing my projects and skills with a modern, responsive design.",
+        "techStack": ["React", "Tailwind CSS", "Vite"],
+        "url": "#"
+    },
+     {
+        "title": "VROS: A Virtual Reality Safety Oriented Simulation",
+        "description": "A VR Chemistry Lab with AI performance assessment and real-time instructor overview",
+        "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
+        "url": "#"
+    },
+    {
+        "title": "E-Commerce Platform",
+        "description": "Full-stack online store with payment integration and inventory management.",
+        "techStack": ["Next.js", "Node.js", "MongoDB", "Stripe"],
+        "url": "#"
+    },
+    {
+        "title": "Task Management App",
+        "description": "Collaborative task tracking application with real-time updates and team features.",
+        "techStack": ["React", "Firebase", "TypeScript"],
+        "url": "#"
+    }
+]

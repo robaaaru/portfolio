@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 export default function App() {
     const [page, setPage] = useState(0)
-    const pageLabels = ["Home", "Dashboard", "Offices", "Drafts", "Profile"]
+    const pageLabels = ["Home", "Projects", "Experience", "Blog", "Profile"]
 
     return(
         <>
