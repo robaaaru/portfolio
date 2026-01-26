@@ -15,7 +15,7 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
                 backgroundColor: "var(--card)",
                 borderColor: "var(--card-border)",
                 boxShadow: "2px 2px 0 0 var(--card-border)",
-                marginBottom: '8px', // reduce vertical space between cards
+                marginBottom: '4px', // reduce vertical space between cards
             }}
             onMouseEnter={(e) => e.currentTarget.style.boxShadow = "none"}
             onMouseLeave={(e) => e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)"}
@@ -36,7 +36,7 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
                     </span>
                 )}
             </div>
-            <p className="text-sm mb-3" style={{ color: "var(--muted-foreground)" }}>
+            <p className="text-base mb-3" style={{ color: "var(--muted-foreground)" }}>
                 {description}
             </p>
             <div className="flex flex-wrap gap-2">

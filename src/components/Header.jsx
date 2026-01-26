@@ -36,7 +36,7 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
     const handleToggleMusic = () => {
         if (!isPlaying) {
             toast("Now Playing", {
-                description: "Starwalking (Instrumental) - Lil Nas X",
+                description: "STARWALKIN' (Instrumental) - Lil Nas X",
                 duration: 4000,
             })
         }

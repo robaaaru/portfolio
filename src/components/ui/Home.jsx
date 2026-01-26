@@ -23,8 +23,14 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
                 {/* Left - Logo */}
                 <div className="flex-shrink-0">
+                    {/* Mobile Image */}
+                    <img 
+                        src={logo} 
+                        alt="Robert Tulagan" 
+                        className="w-36 h-36 md:hidden object-contain"
+                    />
                     <div 
-                        className="w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-2xl overflow-hidden flex items-center justify-center p-6 relative group"
+                        className="hidden md:flex w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-2xl overflow-hidden items-center justify-center p-6 relative group"
                         style={{ 
                             backgroundColor: "var(--card)",
                             border: "1px solid var(--card-border)",

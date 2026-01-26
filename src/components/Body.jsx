@@ -143,21 +143,21 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     
     const content = (() => {
         switch(displayedPage){
-            case 0: return <Home />
-            case 1: return <Card onSelectProject={(project) => {
+            case 0: return <Card onSelectProject={(project) => {
                 setIsVisible(false);
                 setTimeout(() => {
                     setPendingProject(project);
                 }, 200);
             }} />
-            case 2: return (<ExperienceList />)
-            case 3: return (<BlogList onSelectBlog={(blog) => {
+            case 1: return (<BlogList onSelectBlog={(blog) => {
                 setIsVisible(false);
                 setTimeout(() => {
                     setPendingBlog(blog);
                 }, 200);
             }} />)
-            default: return (
+            case 2: return <Home />
+            case 3: return (<ExperienceList />)
+            case 4: return (
                 <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
                     Content coming soon.
                 </div>

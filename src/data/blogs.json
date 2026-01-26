@@ -1,32 +1,26 @@
 [
     {
         "id": 1,
-        "title": "Getting Started with React and Vite",
-        "date": "January 15, 2026",
-        "excerpt": "A comprehensive guide to setting up a modern React project with Vite, including best practices and performance tips.",
-        "description": "This in-depth tutorial walks you through the entire process of creating a modern React application using Vite as the build tool. We'll cover project initialization, component structure, state management, and deployment strategies. You'll learn about Vite's lightning-fast hot module replacement, tree-shaking capabilities, and how it compares to other bundlers like Webpack. By the end of this guide, you'll have a solid foundation for building scalable React applications with optimal performance.",
+        "title": "Catalyst Collider Design Challenge @ T.I.P Quezon City",
+        "date": "December 20, 2025",
+        "excerpt": "My first shot at a competition. An opportunity to prove and improve.",
         "image": "https://picsum.photos/400/300?random=1",
-        "tags": ["React", "Vite", "JavaScript", "Web Development"],
         "readTime": "5 min read"
     },
     {
         "id": 2,
-        "title": "Building Responsive UIs with Tailwind CSS",
+        "title": "2025 DOST Regional Science, Technology, and Innovation Week in NCR",
         "date": "January 10, 2026",
-        "excerpt": "Learn how to create beautiful, responsive user interfaces using Tailwind CSS utility classes and design patterns.",
-        "description": "Tailwind CSS has revolutionized how we approach styling in modern web development. This comprehensive guide explores the utility-first approach, showing you how to build responsive, maintainable UIs without writing custom CSS. We'll dive into Tailwind's responsive design system, component extraction strategies, and best practices for large-scale applications. You'll learn about the design tokens, spacing scale, and how to customize Tailwind to match your brand's design system.",
+        "excerpt": "A glimpse into the annual DOST RSTW in NCR, featuring innovative projects and ideas.",
         "image": "https://picsum.photos/400/300?random=2",
-        "tags": ["Tailwind CSS", "CSS", "Responsive Design", "UI/UX"],
         "readTime": "7 min read"
     },
     {
         "id": 3,
-        "title": "The Future of Web Development: Trends to Watch",
+        "title": "A Tether and a Flight",
         "date": "January 5, 2026",
-        "excerpt": "Exploring emerging technologies and trends that are shaping the future of web development in 2026 and beyond.",
-        "description": "The web development landscape is constantly evolving, with new technologies and paradigms emerging at a rapid pace. This article explores the most significant trends that will shape the industry in 2026 and beyond. We'll discuss the rise of WebAssembly, the maturation of serverless architectures, the impact of AI on development workflows, and the growing importance of web performance and accessibility. Understanding these trends will help you stay ahead in your career and make informed decisions about technology choices.",
+        "excerpt": "A profound short animated story revolving around the nature of human attachment.",
         "image": "https://picsum.photos/400/300?random=3",
-        "tags": ["Web Development", "Trends", "Technology", "Future"],
         "readTime": "10 min read"
     },
     {
@@ -36,7 +30,6 @@
         "excerpt": "Practical techniques for improving the performance of your React applications, from code splitting to memoization.",
         "description": "Performance is crucial for user experience and business success. This guide covers advanced React optimization techniques that can significantly improve your application's speed and responsiveness. We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis. You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application.",
         "image": "https://picsum.photos/400/300?random=4",
-        "tags": ["React", "Performance", "Optimization", "JavaScript"],
         "readTime": "8 min read"
     },
     {
@@ -46,7 +39,6 @@
         "excerpt": "A beginner-friendly introduction to machine learning concepts and how to get started with Python libraries like scikit-learn.",
         "description": "Machine learning is transforming industries across the globe, and Python has become the go-to language for ML development. This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment. We'll work with popular libraries like scikit-learn, pandas, and matplotlib to build real-world projects. By the end, you'll have the knowledge and confidence to start your journey in machine learning and apply these techniques to solve practical problems.",
         "image": "https://picsum.photos/400/300?random=5",
-        "tags": ["Machine Learning", "Python", "AI", "Data Science"],
         "readTime": "12 min read"
     }
 ]

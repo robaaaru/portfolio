@@ -21,12 +21,12 @@ const isInAppBrowser = () => {
 }
 
 export default function App() {
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState(2)
     const [selectedProject, setSelectedProject] = useState(null)
     const [isPlaying, setIsPlaying] = useState(false)
     const [playerKey, setPlayerKey] = useState(0)
     const [showBrowserPrompt, setShowBrowserPrompt] = useState(false)
-    const pageLabels = ["Home", "Projects", "Experience", "Blog", "Profile"]
+    const pageLabels = ["Projects", "Blog", "Home", "Experience", "Certifications"]
 
     // Check for in-app browser on mount
     useEffect(() => {
