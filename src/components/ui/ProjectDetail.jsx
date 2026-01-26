@@ -1,10 +1,18 @@
 import { Badge } from "@/components/retroui/Badge";
+import { ArrowLeft } from 'lucide-react';
 
-export default function ProjectDetail({ project }) {
+export default function ProjectDetail({ project, onBack }) {
     const { title, description, techStack, url, ongoing } = project;
 
     return (
-        <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem]">
+        <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem] pt-4 px-4">
+            {/* Mobile Back Button */}
+            <div className="md:hidden mb-4">
+                <button onClick={onBack} className="flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity" style={{ color: "var(--foreground)" }}>
+                    <ArrowLeft size={16} />
+                    Back
+                </button>
+            </div>
             <div 
                 className="p-6 rounded border"
                 style={{ 
