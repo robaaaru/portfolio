@@ -7,7 +7,7 @@
         "ongoing": false
     },
     {
-        "title": "VROS: A Virtual Reality Safety Oriented Simulation",
+        "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
         "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
         "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
         "url": "#",

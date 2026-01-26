@@ -1,6 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Masonry effect for project cards */
+.masonry {
+  column-count: 1;
+  column-gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+/* Remove 3-column layout for lg screens, keep 2 columns for md and up */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
 *{
   font-family: 'Space Grotesk', sans-serif;
   transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, fill 300ms ease, stroke 300ms ease;

@@ -15,6 +15,7 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
                 backgroundColor: "var(--card)",
                 borderColor: "var(--card-border)",
                 boxShadow: "2px 2px 0 0 var(--card-border)",
+                marginBottom: '8px', // reduce vertical space between cards
             }}
             onMouseEnter={(e) => e.currentTarget.style.boxShadow = "none"}
             onMouseLeave={(e) => e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)"}
@@ -51,12 +52,18 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
 
 export default function Card({ onSelectProject }){
     return(
-        <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem]" style={{ color: "var(--card-foreground)" }}>
-            <div className="flex flex-col gap-4">
+        <div className="mx-auto w-full md:w-[38rem] lg:w-[44rem] pt-4 px-4 flex justify-center" style={{ color: "var(--card-foreground)" }}>
+            <div className="masonry" style={{ columnGap: '1rem', display: 'inline-block' }}>
                 {projects.map((project, index) => (
-                    <ProjectCard key={index} {...project} onClick={() => onSelectProject(project)} />
+                    <div
+                        key={index}
+                        className="masonry-item"
+                        style={{ minWidth: 0, width: '100%' }}
+                    >
+                        <ProjectCard {...project} onClick={() => onSelectProject(project)} />
+                    </div>
                 ))}
             </div>
         </div>
     )
-}   
+}

@@ -47,7 +47,7 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
 
     return(
         <header className="fixed top-0 w-full z-50" style={{ backgroundColor: bgTransparent, color: "var(--foreground)", backdropFilter: "blur(32px)", WebkitBackdropFilter: "blur(32px)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
-            <div className="mx-auto w-full md:w-[45rem] px-3 md:px-4 lg:px-5 h-13 md:h-15 lg:h-18 border-b flex items-center" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
+            <div className="mx-auto w-full md:max-w-[810px] px-3 md:px-4 lg:px-5 h-13 md:h-15 lg:h-18 border-b flex items-center" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
             <div className="flex items-center justify-between gap-2 w-full">
                 <Breadcrumb className="min-w-0 flex-1">
                     <BreadcrumbList style={{ color: "var(--foreground)" }} className="flex-nowrap">
