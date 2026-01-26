@@ -10,6 +10,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     const [displayedProject, setDisplayedProject] = useState(selectedProject)
     const isFirstRender = useRef(true)
     const closingProject = useRef(false)
+    const [pendingProject, setPendingProject] = useState(null)
 
     // Handle browser back/forward for project detail
     useEffect(() => {
@@ -30,6 +31,18 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             window.removeEventListener('popstate', onPopState);
         };
     }, [displayedProject]);
+
+    // Handle smooth transition when opening a project
+    useEffect(() => {
+        if (pendingProject) {
+            setIsVisible(false);
+            setTimeout(() => {
+                setDisplayedProject(pendingProject);
+                setIsVisible(true);
+                setPendingProject(null);
+            }, 200);
+        }
+    }, [pendingProject]);
 
     // Handle page transitions
     useEffect(() => {
@@ -76,7 +89,10 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
         switch(displayedPage){
             case 0: return <Home />
             case 1: return <Card onSelectProject={(project) => {
-                setDisplayedProject(project);
+                setIsVisible(false);
+                setTimeout(() => {
+                    setPendingProject(project);
+                }, 200);
             }} />
             case 2: return (<ExperienceList />)
             default: return (
