@@ -9,6 +9,27 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     const [displayedPage, setDisplayedPage] = useState(activePage)
     const [displayedProject, setDisplayedProject] = useState(selectedProject)
     const isFirstRender = useRef(true)
+    const closingProject = useRef(false)
+
+    // Handle browser back/forward for project detail
+    useEffect(() => {
+        const onPopState = (e) => {
+            closingProject.current = true;
+            setIsVisible(false);
+            setTimeout(() => {
+                setDisplayedProject(null);
+                closingProject.current = false;
+                setIsVisible(true);
+            }, 200);
+        };
+        if (displayedProject) {
+            window.history.pushState({ project: true }, '', '#project');
+            window.addEventListener('popstate', onPopState);
+        }
+        return () => {
+            window.removeEventListener('popstate', onPopState);
+        };
+    }, [displayedProject]);
 
     // Handle page transitions
     useEffect(() => {
@@ -54,7 +75,9 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     const content = (() => {
         switch(displayedPage){
             case 0: return <Home />
-            case 1: return <Card onSelectProject={setSelectedProject} />
+            case 1: return <Card onSelectProject={(project) => {
+                setDisplayedProject(project);
+            }} />
             case 2: return (<ExperienceList />)
             default: return (
                 <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
