@@ -1,4 +1,4 @@
-import { Square, PanelsTopLeft, Building, SquarePen, SquareUser } from "lucide-react";
+import { Square, PanelsTopLeft, Building, SquarePen, Award } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Footer({ setPage, activePage = 0, labels = [] }) {
@@ -23,11 +23,11 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
   const wrapperClasses = "flex flex-col items-center justify-center relative";
 
   const icons = [
+    { icon: PanelsTopLeft, key: "projects" },
+    { icon: SquarePen, key: "blog" },
     { icon: Square, key: "home" },
-    { icon: PanelsTopLeft, key: "dashboard" },
-    { icon: Building, key: "offices" },
-    { icon: SquarePen, key: "drafts" },
-    { icon: SquareUser, key: "profile" },
+    { icon: Building, key: "experience" },
+    { icon: Award, key: "certifications" },
   ].map((item, index) => ({ ...item, label: labels[index] || item.key }));
 
   const handlePageChange = (index) => {
@@ -47,28 +47,30 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
               aria-label={label}
               title={label}
             >
-              <Icon
-                strokeWidth={strokeWidth}
-                className={baseIconClasses}
-                style={{
-                  stroke: activePage === index ? "#048688" : "var(--icon-muted)",
-                  transition: "stroke 200ms ease",
-                }}
-                onMouseEnter={(e) => {
-                  if (activePage !== index) e.currentTarget.style.stroke = "#048688";
-                }}
-                onMouseLeave={(e) => {
-                  if (activePage !== index) e.currentTarget.style.stroke = "var(--icon-muted)";
-                }}
-              />
-              <div 
-                className="w-1 h-1 rounded-full absolute -bottom-2 left-1/2 -translate-x-1/2 transition-all duration-200 ease-out" 
-                style={{ 
-                  backgroundColor: "#048688",
-                  opacity: activePage === index ? 1 : 0,
-                  transform: `translateX(-50%) ${activePage === index ? "scale(1)" : "scale(0)"}`
-                }}
-              ></div>
+              <div className="relative">
+                <Icon
+                  strokeWidth={strokeWidth}
+                  className={baseIconClasses}
+                  style={{
+                    stroke: activePage === index ? "#048688" : "var(--icon-muted)",
+                    transition: "stroke 200ms ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (activePage !== index) e.currentTarget.style.stroke = "#048688";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (activePage !== index) e.currentTarget.style.stroke = "var(--icon-muted)";
+                  }}
+                />
+                <div 
+                  className="w-1 h-1 rounded-full absolute -bottom-2 left-1/2 -translate-x-[40%] transition-all duration-200 ease-out" 
+                  style={{ 
+                    backgroundColor: "#048688",
+                    opacity: activePage === index ? 1 : 0,
+                    transform: `${activePage === index ? "scale(1)" : "scale(0)"}`
+                  }}
+                ></div>
+              </div>
             </button>
           ))}
         </div>

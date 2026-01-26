@@ -6,8 +6,19 @@ export default function BlogList({ onSelectBlog }) {
         <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem] flex flex-col pt-4 px-4">
             <div className="flex flex-col gap-4">
                 {blogData.map(blog => (
-                    <div key={blog.id} className="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0 cursor-pointer hover:bg-gray-50 transition-colors duration-200" onClick={() => onSelectBlog && onSelectBlog(blog)}>
+                    <div key={blog.id} className="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0 cursor-pointer" onClick={() => onSelectBlog && onSelectBlog(blog)}>
                         <div className="flex flex-col md:flex-row gap-6">
+                            {/* Image */}
+                            {blog.image && (
+                                <div className="flex-shrink-0 w-full md:w-48 h-48 md:h-32">
+                                    <img
+                                        src={blog.image}
+                                        alt={blog.title}
+                                        className="w-full h-full object-cover rounded"
+                                    />
+                                </div>
+                            )}
+
                             {/* Content */}
                             <div className="flex-1">
                                 {/* Title */}
@@ -16,7 +27,7 @@ export default function BlogList({ onSelectBlog }) {
                                 </h3>
 
                                 {/* Excerpt */}
-                                <p className="text-sm mb-3 leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+                                <p className="text-base mb-3 leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
                                     {blog.excerpt}
                                 </p>
 
@@ -32,17 +43,6 @@ export default function BlogList({ onSelectBlog }) {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Image */}
-                            {blog.image && (
-                                <div className="flex-shrink-0 w-full md:w-48 h-48 md:h-32">
-                                    <img
-                                        src={blog.image}
-                                        alt={blog.title}
-                                        className="w-full h-full object-cover rounded"
-                                    />
-                                </div>
-                            )}
                         </div>
                     </div>
                 ))}

@@ -45,7 +45,7 @@ export default function BlogDetail({ blog, onBack }) {
                 )}
 
                 {/* Description */}
-                <div className="text-lg leading-relaxed" style={{ color: "var(--foreground)" }}>
+                <div className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
                     {content.map((paragraph, index) => (
                         <p key={index} className="mb-6">
                             {index === 0 ? (

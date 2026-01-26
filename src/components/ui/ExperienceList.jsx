@@ -19,13 +19,13 @@ export default function ExperienceList() {
                             </div>
                             {/* Main content */}
                             <div className="flex-1">
-                                <div className="font-semibold text-base mb-1" style={{color: "var(--foreground)"}}>{exp.institution}</div>
-                                <div className="text-sm font-medium mb-1" style={{color: "#048688"}}>{exp.role}</div>
-                                <div className="text-xs mb-2" style={{color: "var(--muted-foreground)"}}>{exp.date}</div>
+                                <div className="font-semibold text-lg mb-1" style={{color: "var(--foreground)"}}>{exp.institution}</div>
+                                <div className="text-base font-medium mb-1" style={{color: "#048688"}}>{exp.role}</div>
+                                <div className="text-sm mb-2" style={{color: "var(--muted-foreground)"}}>{exp.date}</div>
                                 {exp.responsibilities && exp.responsibilities.length > 0 && (
                                     <div className="mt-2">
-                                        <div className="text-xs font-semibold mb-1" style={{color: "var(--foreground)"}}>Responsibilities & Contributions</div>
-                                        <ul className="list-disc pl-5 text-xs md:text-sm" style={{color: "var(--muted-foreground)"}}>
+                                        <div className="text-sm font-semibold mb-1" style={{color: "var(--foreground)"}}>Responsibilities & Contributions</div>
+                                        <ul className="list-disc pl-5 text-sm" style={{color: "var(--muted-foreground)"}}>
                                             {exp.responsibilities.map((item, idx) => (
                                                 <li key={idx}>{item}</li>
                                             ))}

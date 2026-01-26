@@ -23,7 +23,7 @@ export default function ProjectDetail({ project, onBack }) {
                 {/* Header */}
                 <div className="flex flex-col gap-2 mb-4">
                     <div className="flex items-center gap-2 flex-wrap">
-                        <h1 className="text-xl md:text-2xl font-bold font-head" style={{ color: "var(--foreground)" }}>
+                        <h1 className="text-2xl md:text-3xl font-bold font-head" style={{ color: "var(--foreground)" }}>
                             {title}
                         </h1>
                         {ongoing && (
@@ -47,7 +47,7 @@ export default function ProjectDetail({ project, onBack }) {
 
                 {/* Tech Stack */}
                 <div className="mb-6">
-                    <h2 className="text-sm font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
                         Tech Stack
                     </h2>
                     <div className="flex flex-wrap gap-2">
