@@ -118,7 +118,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                         transition: 'opacity 200ms ease-out, transform 200ms ease-out'
                     }}
                 >
-                    <ProjectDetail project={displayedProject} />
+                    <ProjectDetail project={displayedProject} onBack={() => setDisplayedProject(null)} />
                 </div>
             </main>
         )
@@ -135,7 +135,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                         transition: 'opacity 200ms ease-out, transform 200ms ease-out'
                     }}
                 >
-                    <BlogDetail blog={displayedBlog} />
+                    <BlogDetail blog={displayedBlog} onBack={() => setDisplayedBlog(null)} />
                 </div>
             </main>
         )
