@@ -4,7 +4,7 @@ export default function ProjectDetail({ project }) {
     const { title, description, techStack, url, ongoing } = project;
 
     return (
-        <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem]">
+        <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem] pt-4 px-4">
             <div 
                 className="p-6 rounded border"
                 style={{ 

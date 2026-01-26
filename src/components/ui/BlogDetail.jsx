@@ -5,7 +5,7 @@ export default function BlogDetail({ blog }) {
     const { title, description, tags, date, readTime, image } = blog;
 
     return (
-        <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem]">
+        <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem] pt-4 px-4">
             <div
                 className="p-6 rounded border"
                 style={{
