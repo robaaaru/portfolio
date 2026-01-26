@@ -5,6 +5,7 @@ import Home from './ui/Home'
 import { useState, useEffect, useRef } from 'react'
 import ExperienceList from './ui/ExperienceList'
 import BlogList from './ui/BlogList'
+import Certifications from './ui/Certifications'
 
 export default function Body({activePage, selectedProject, setSelectedProject}){
     const [isVisible, setIsVisible] = useState(true)
@@ -18,6 +19,15 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     const [pendingProject, setPendingProject] = useState(null)
     const [pendingBlog, setPendingBlog] = useState(null)
 
+    const pageHashes = ['#projects', '#blog', '#home', '#experience', '#certifications']
+
+    // Set initial hash on mount
+    useEffect(() => {
+        if (window.location.hash === '' || window.location.hash === '#') {
+            window.history.replaceState(null, '', '#home')
+        }
+    }, [])
+
     // Handle browser back/forward for project detail
     useEffect(() => {
         const onPopState = (e) => {
@@ -27,6 +37,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                 setDisplayedProject(null);
                 closingProject.current = false;
                 setIsVisible(true);
+                window.history.replaceState(null, '', '#projects');
             }, 200);
         };
         if (displayedProject) {
@@ -47,6 +58,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                 setDisplayedBlog(null);
                 closingBlog.current = false;
                 setIsVisible(true);
+                window.history.replaceState(null, '', '#blog');
             }, 200);
         };
         if (displayedBlog) {
@@ -98,6 +110,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             setDisplayedPage(activePage)
             setDisplayedProject(selectedProject)
             setDisplayedBlog(selectedBlog)
+            window.history.replaceState(null, '', pageHashes[activePage])
             // Small delay before fading in
             setTimeout(() => {
                 setIsVisible(true)
@@ -157,11 +170,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             }} />)
             case 2: return <Home />
             case 3: return (<ExperienceList />)
-            case 4: return (
-                <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
-                    Content coming soon.
-                </div>
-            )
+            case 4: return <Certifications />
         }
     })();
 

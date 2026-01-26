@@ -3,6 +3,7 @@ import {Breadcrumb, BreadcrumbItem,BreadcrumbLink, BreadcrumbList, BreadcrumbPag
 import { useEffect, useState } from "react"
 import { Play, Pause } from "lucide-react"
 import { toast } from "sonner"
+import { Link } from "react-router-dom"
 
 export default function Header({ activePage = 0, labels = [], onNavigate, selectedProject, onBack, isPlaying, toggleMusic }){
     const currentLabel = selectedProject ? selectedProject.title : (labels[activePage] || "Current")
@@ -52,13 +53,13 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
                 <Breadcrumb className="min-w-0 flex-1">
                     <BreadcrumbList style={{ color: "var(--foreground)" }} className="flex-nowrap">
                         <BreadcrumbItem className="flex-shrink-0">
-                            <BreadcrumbLink href="#" onClick={goHome} className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Robert Tulagan</BreadcrumbLink>
+                            <Link to="/" className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Robert Tulagan</Link>
                         </BreadcrumbItem>
                     <BreadcrumbSeparator style={{ color: "var(--muted-foreground)" }} className="flex-shrink-0" />
                         {selectedProject ? (
                             <>
                                 <BreadcrumbItem className="flex-shrink-0">
-                                    <BreadcrumbLink href="#" onClick={(e) => { e.preventDefault(); onBack(); }} className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Projects</BreadcrumbLink>
+                                    <Link to="/projects" className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Projects</Link>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator style={{ color: "var(--muted-foreground)" }} className="flex-shrink-0" />
                                 <BreadcrumbItem className="min-w-0">

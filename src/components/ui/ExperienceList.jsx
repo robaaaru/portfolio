@@ -24,7 +24,7 @@ export default function ExperienceList() {
                                 <div className="text-sm mb-2" style={{color: "var(--muted-foreground)"}}>{exp.date}</div>
                                 {exp.responsibilities && exp.responsibilities.length > 0 && (
                                     <div className="mt-2">
-                                        <div className="text-sm font-semibold mb-1" style={{color: "var(--foreground)"}}>Responsibilities & Contributions</div>
+                                        <div className="text-sm font-semibold mb-1" style={{color: "var(--foreground)"}}>Achievements & Contributions</div>
                                         <ul className="list-disc pl-5 text-sm" style={{color: "var(--muted-foreground)"}}>
                                             {exp.responsibilities.map((item, idx) => (
                                                 <li key={idx}>{item}</li>

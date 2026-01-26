@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "title": "Portfolio Website",
         "description": "A sleek, responsive portfolio built with modern web technologies to showcase my work and skills.",
         "techStack": ["React", "Tailwind CSS", "Vite"],
@@ -7,6 +8,7 @@
         "ongoing": false
     },
     {
+        "id": 2,
         "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
         "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
         "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
@@ -14,6 +16,7 @@
         "ongoing": false
     },
     {
+        "id": 3,
         "title": "LuxeLane",
         "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
         "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
@@ -21,6 +24,7 @@
         "ongoing": false
     },
     {
+        "id": 4,
         "title": "AquaGuard: A sensor-based water conservation solution",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Internet of Things", "Flutter"],
@@ -28,6 +32,7 @@
         "ongoing": false
     },
     {
+        "id": 5,
         "title": "Smart Greenhouse Detection using YOLO",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
