@@ -1,16 +1,22 @@
 import Card from './ui/Card'
 import ProjectDetail from './ui/ProjectDetail'
+import BlogDetail from './ui/BlogDetail'
 import Home from './ui/Home'
 import { useState, useEffect, useRef } from 'react'
 import ExperienceList from './ui/ExperienceList'
+import BlogList from './ui/BlogList'
 
 export default function Body({activePage, selectedProject, setSelectedProject}){
     const [isVisible, setIsVisible] = useState(true)
     const [displayedPage, setDisplayedPage] = useState(activePage)
     const [displayedProject, setDisplayedProject] = useState(selectedProject)
+    const [selectedBlog, setSelectedBlog] = useState(null)
+    const [displayedBlog, setDisplayedBlog] = useState(null)
     const isFirstRender = useRef(true)
     const closingProject = useRef(false)
+    const closingBlog = useRef(false)
     const [pendingProject, setPendingProject] = useState(null)
+    const [pendingBlog, setPendingBlog] = useState(null)
 
     // Handle browser back/forward for project detail
     useEffect(() => {
@@ -32,6 +38,26 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
         };
     }, [displayedProject]);
 
+    // Handle browser back/forward for blog detail
+    useEffect(() => {
+        const onPopState = (e) => {
+            closingBlog.current = true;
+            setIsVisible(false);
+            setTimeout(() => {
+                setDisplayedBlog(null);
+                closingBlog.current = false;
+                setIsVisible(true);
+            }, 200);
+        };
+        if (displayedBlog) {
+            window.history.pushState({ blog: true }, '', '#blog');
+            window.addEventListener('popstate', onPopState);
+        }
+        return () => {
+            window.removeEventListener('popstate', onPopState);
+        };
+    }, [displayedBlog]);
+
     // Handle smooth transition when opening a project
     useEffect(() => {
         if (pendingProject) {
@@ -43,6 +69,18 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             }, 200);
         }
     }, [pendingProject]);
+
+    // Handle smooth transition when opening a blog
+    useEffect(() => {
+        if (pendingBlog) {
+            setIsVisible(false);
+            setTimeout(() => {
+                setDisplayedBlog(pendingBlog);
+                setIsVisible(true);
+                setPendingBlog(null);
+            }, 200);
+        }
+    }, [pendingBlog]);
 
     // Handle page transitions
     useEffect(() => {
@@ -59,6 +97,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
         const timer = setTimeout(() => {
             setDisplayedPage(activePage)
             setDisplayedProject(selectedProject)
+            setDisplayedBlog(selectedBlog)
             // Small delay before fading in
             setTimeout(() => {
                 setIsVisible(true)
@@ -66,7 +105,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
         }, 150)
 
         return () => clearTimeout(timer)
-    }, [activePage, selectedProject])
+    }, [activePage, selectedProject, selectedBlog])
     
     // If a project is selected, show the project detail view
     if (displayedProject) {
@@ -84,6 +123,23 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             </main>
         )
     }
+
+    // If a blog is selected, show the blog detail view
+    if (displayedBlog) {
+        return (
+            <main className="min-h-screen pt-16 pb-20 md:pt-18 md:pb-22 lg:pt-20 lg:pb-24 px-3" style={{ backgroundColor: "var(--background)" }}>
+                <div 
+                    style={{ 
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'opacity 200ms ease-out, transform 200ms ease-out'
+                    }}
+                >
+                    <BlogDetail blog={displayedBlog} />
+                </div>
+            </main>
+        )
+    }
     
     const content = (() => {
         switch(displayedPage){
@@ -95,6 +151,12 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                 }, 200);
             }} />
             case 2: return (<ExperienceList />)
+            case 3: return (<BlogList onSelectBlog={(blog) => {
+                setIsVisible(false);
+                setTimeout(() => {
+                    setPendingBlog(blog);
+                }, 200);
+            }} />)
             default: return (
                 <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
                     Content coming soon.
