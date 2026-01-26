@@ -5,6 +5,7 @@ import Home from './ui/Home'
 import { useState, useEffect, useRef } from 'react'
 import ExperienceList from './ui/ExperienceList'
 import BlogList from './ui/BlogList'
+import Certifications from './ui/Certifications'
 
 export default function Body({activePage, selectedProject, setSelectedProject}){
     const [isVisible, setIsVisible] = useState(true)
@@ -157,11 +158,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             }} />)
             case 2: return <Home />
             case 3: return (<ExperienceList />)
-            case 4: return (
-                <div className="p-3 md:p-4 lg:p-5 mx-auto w-full md:w-[42rem] lg:w-[46rem] rounded-lg text-[0.98rem] md:text-base leading-relaxed" style={{ backgroundColor: "var(--card)", color: "var(--card-foreground)" }}>
-                    Content coming soon.
-                </div>
-            )
+            case 4: return <Certifications />
         }
     })();
 

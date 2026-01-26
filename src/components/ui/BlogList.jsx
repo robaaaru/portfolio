@@ -32,7 +32,7 @@ export default function BlogList({ onSelectBlog }) {
                                 </p>
 
                                 {/* Meta Info */}
-                                <div className="flex items-center gap-4 text-sm mb-3" style={{ color: "var(--muted-foreground)" }}>
+                                <div className="flex items-center gap-4 text-sm mb-3" style={{ color: "#048688" }}>
                                     <div className="flex items-center gap-1">
                                         <Calendar size={16} />
                                         <span>{blog.date}</span>

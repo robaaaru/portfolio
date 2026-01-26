@@ -21,7 +21,7 @@ export default function BlogDetail({ blog, onBack }) {
                     <h1 className="text-2xl md:text-3xl font-bold font-head mb-4" style={{ color: "var(--foreground)" }}>
                         {title}
                     </h1>
-                    <div className="flex items-center gap-6 text-sm" style={{ color: "var(--muted-foreground)" }}>
+                    <div className="flex items-center gap-6 text-sm" style={{ color: "#048688" }}>
                         <div className="flex items-center gap-1">
                             <Calendar size={16} />
                             <span>{date}</span>
