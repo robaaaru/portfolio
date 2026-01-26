@@ -52,7 +52,7 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
 
 export default function Card({ onSelectProject }){
     return(
-        <div className="mx-auto w-full md:w-[38rem] lg:w-[44rem] pt-4 px-4 flex justify-center" style={{ color: "var(--card-foreground)" }}>
+        <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem] pt-4 px-4 flex justify-center" style={{ color: "var(--card-foreground)" }}>
             <div className="masonry" style={{ columnGap: '1rem', display: 'inline-block' }}>
                 {projects.map((project, index) => (
                     <div
