@@ -4,27 +4,27 @@ import { ExternalLink } from 'lucide-react';
 export default function Certifications() {
     return (
         <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem] pt-4 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6">
                 {certifications.map(cert => (
-                    <div key={cert.id} className="rounded-lg border overflow-hidden hover:border-gray-300 dark:hover:border-gray-600 transition-colors duration-300" style={{ backgroundColor: "var(--card)", borderColor: "var(--card-border)" }}>
-                        <div className="aspect-video" style={{ backgroundColor: "var(--muted)" }}>
+                    <div key={cert.id} className="flex items-start gap-4 border-b border-gray-200 pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0">
+                        <div className="w-16 h-16 flex-shrink-0 rounded" style={{ backgroundColor: "var(--muted)" }}>
                             <img
                                 src={cert.image}
                                 alt={cert.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded"
                             />
                         </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                        <div className="flex-1">
+                            <h3 className="text-base font-semibold mb-1" style={{ color: "var(--foreground)" }}>
                                 {cert.title}
                             </h3>
                             <p className="text-sm mb-1" style={{ color: "#048688" }}>
                                 {cert.issuer}
                             </p>
-                            <p className="text-sm mb-3" style={{ color: "var(--muted-foreground)" }}>
+                            <p className="text-sm mb-2" style={{ color: "var(--muted-foreground)" }}>
                                 Issued {cert.date}
                             </p>
-                            <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
                                 <span className="text-xs font-mono px-2 py-1 rounded" style={{ backgroundColor: "var(--muted)", color: "var(--foreground)" }}>
                                     {cert.credentialId}
                                 </span>
