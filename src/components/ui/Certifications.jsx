@@ -6,8 +6,8 @@ export default function Certifications() {
         <div className="mx-auto w-full md:w-[42rem] lg:w-[50rem] pt-4 px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {certifications.map(cert => (
-                    <div key={cert.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 transition-colors duration-300">
-                        <div className="aspect-video bg-gray-50">
+                    <div key={cert.id} className="rounded-lg border overflow-hidden hover:border-gray-300 dark:hover:border-gray-600 transition-colors duration-300" style={{ backgroundColor: "var(--card)", borderColor: "var(--card-border)" }}>
+                        <div className="aspect-video" style={{ backgroundColor: "var(--muted)" }}>
                             <img
                                 src={cert.image}
                                 alt={cert.title}
@@ -25,7 +25,7 @@ export default function Certifications() {
                                 Issued {cert.date}
                             </p>
                             <div className="flex items-center justify-between">
-                                <span className="text-xs font-mono bg-gray-100 px-2 py-1 rounded" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs font-mono px-2 py-1 rounded" style={{ backgroundColor: "var(--muted)", color: "var(--foreground)" }}>
                                     {cert.credentialId}
                                 </span>
                                 <a

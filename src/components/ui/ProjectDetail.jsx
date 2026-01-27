@@ -1,14 +1,28 @@
 import { Badge } from "@/components/retroui/Badge";
 import { ArrowLeft } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import projects from '../../data/projects.json';
 
-export default function ProjectDetail({ project, onBack }) {
+export default function ProjectDetail() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const idNum = parseInt(id);
+    if (isNaN(idNum)) {
+        return <div>Invalid project id</div>;
+    }
+    const project = projects.find(p => p.id === idNum);
+
+    if (!project) {
+        return <div>Project not found</div>;
+    }
+
     const { title, description, techStack, url, ongoing } = project;
 
     return (
         <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem] pt-4 px-4">
             {/* Mobile Back Button */}
             <div className="md:hidden mb-4">
-                <button onClick={onBack} className="flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity" style={{ color: "var(--foreground)" }}>
+                <button onClick={() => navigate('/projects')} className="flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity" style={{ color: "var(--foreground)" }}>
                     <ArrowLeft size={16} />
                     Back
                 </button>

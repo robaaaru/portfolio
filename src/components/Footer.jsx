@@ -1,7 +1,8 @@
 import { Square, PanelsTopLeft, Building, SquarePen, Award } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Footer({ setPage, activePage = 0, labels = [] }) {
+export default function Footer({ setPage, activePage = 0, labels = [], pagePaths = [] }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -30,18 +31,14 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
     { icon: Award, key: "certifications" },
   ].map((item, index) => ({ ...item, label: labels[index] || item.key }));
 
-  const handlePageChange = (index) => {
-    setPage(index);
-  };
-
   return (
     <footer className="fixed bottom-0 w-full overflow-visible z-50" style={{ backgroundColor: bgTransparent, color: "var(--foreground)", backdropFilter: "blur(32px)", WebkitBackdropFilter: "blur(32px)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
       <div className="mx-auto w-full md:max-w-[810px] px-3 md:px-4 lg:px-5 h-13 md:h-15 lg:h-18 border-t" style={{ borderColor: "var(--border)", transition: "background-color 200ms ease, color 200ms ease, border-color 200ms ease" }}>
         <div className="flex justify-center items-center gap-6 h-full">
           {icons.map(({ icon: Icon, key, label }, index) => (
-            <button
+            <Link
               key={key}
-              onClick={() => handlePageChange(index)}
+              to={pagePaths[index]}
               className="flex items-center justify-center relative transition-transform duration-200 ease-out"
               style={{ transform: activePage === index ? "translateY(-2px)" : "translateY(0)" }}
               aria-label={label}
@@ -71,7 +68,7 @@ export default function Footer({ setPage, activePage = 0, labels = [] }) {
                   }}
                 ></div>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       </div>

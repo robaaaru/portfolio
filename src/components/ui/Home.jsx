@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import logoBlack from '@/assets/icons/1robkeyblack.svg'
 import logoWhite from '@/assets/icons/1robkeywhite.svg'
+import { Github, Linkedin } from 'lucide-react'
 
 export default function Home() {
     const [isDark, setIsDark] = useState(false)
@@ -116,6 +117,30 @@ export default function Home() {
                         I learn through hands-on experience and continuous improvement — 
                         always eager to grow my skills and contribute to meaningful projects.
                     </p>
+
+                    {/* Social Links */}
+                    <div className="flex gap-4 mt-6">
+                        <a 
+                            href="https://github.com/robaaaru" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 p-2 rounded-lg"
+                            style={{ color: "var(--foreground)" }}
+                        >
+                            <Github size={20} />
+                            <span className="text-sm font-medium">GitHub</span>
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/in/robert-tulagan-921594273/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 p-2 rounded-lg"
+                            style={{ color: "var(--foreground)" }}
+                        >
+                            <Linkedin size={20} />
+                            <span className="text-sm font-medium">LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 

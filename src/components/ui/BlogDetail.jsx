@@ -1,16 +1,30 @@
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
 import blogDetails from '../../data/blogDetails.json';
+import blogs from '../../data/blogs.json';
 
-export default function BlogDetail({ blog, onBack }) {
-    const { id, title, date, readTime, image } = blog;
-    const detail = blogDetails.find(d => d.id === id);
+export default function BlogDetail() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const idNum = parseInt(id);
+    if (isNaN(idNum)) {
+        return <div>Invalid blog id</div>;
+    }
+    const blog = blogs.find(b => b.id === idNum);
+
+    if (!blog) {
+        return <div>Blog not found</div>;
+    }
+
+    const { title, date, readTime, image } = blog;
+    const detail = blogDetails.find(d => d.id === parseInt(id));
     const content = detail ? detail.content : [];
 
     return (
         <div className="mx-auto w-full max-w-4xl pt-4 px-4">
             {/* Mobile Back Button */}
             <div className="md:hidden mb-4">
-                <button onClick={onBack} className="flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity" style={{ color: "var(--foreground)" }}>
+                <button onClick={() => navigate('/blog')} className="flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity" style={{ color: "var(--foreground)" }}>
                     <ArrowLeft size={16} />
                     Back
                 </button>

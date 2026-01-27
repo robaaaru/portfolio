@@ -1,8 +1,16 @@
 import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
-import Body from './components/Body.jsx'
 import { useState, useEffect, useRef } from 'react'
 import { Toaster } from './components/retroui/Sonner.jsx'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import Home from './components/ui/Home'
+import Card from './components/ui/Card'
+import ProjectDetail from './components/ui/ProjectDetail'
+import BlogList from './components/ui/BlogList'
+import BlogDetail from './components/ui/BlogDetail'
+import ExperienceList from './components/ui/ExperienceList'
+import Certifications from './components/ui/Certifications'
+import projects from './data/projects.json'
 
 // Detect in-app browsers (Messenger, Instagram, Facebook, etc.)
 const isInAppBrowser = () => {
@@ -21,12 +29,63 @@ const isInAppBrowser = () => {
 }
 
 export default function App() {
-    const [page, setPage] = useState(2)
-    const [selectedProject, setSelectedProject] = useState(null)
+    const navigate = useNavigate()
+    const location = useLocation()
     const [isPlaying, setIsPlaying] = useState(false)
     const [playerKey, setPlayerKey] = useState(0)
     const [showBrowserPrompt, setShowBrowserPrompt] = useState(false)
     const pageLabels = ["Projects", "Blog", "Home", "Experience", "Certifications"]
+
+    // Map pathname to page index for Header and Footer
+    const getCurrentPage = () => {
+        const path = location.pathname
+        if (path === '/projects' || path.startsWith('/projects/')) return 0
+        if (path === '/blog' || path.startsWith('/blog/')) return 1
+        if (path === '/') return 2
+        if (path === '/experience') return 3
+        if (path === '/certifications') return 4
+        return 2 // default to home
+    }
+
+    const activePage = getCurrentPage()
+
+    // Get selected project for Header breadcrumb
+    const getSelectedProject = () => {
+        if (location.pathname.startsWith('/projects/')) {
+            const id = parseInt(location.pathname.split('/')[2])
+            return projects.find(p => p.id === id) || null
+        }
+        return null
+    }
+
+    const selectedProject = getSelectedProject()
+
+    const [isVisible, setIsVisible] = useState(true)
+    const isFirstRender = useRef(true)
+
+    // Handle SPA redirects from GitHub Pages 404.html
+    useEffect(() => {
+        const search = window.location.search;
+        if (search.startsWith('?/')) {
+            const path = search.slice(2).split('&')[0]; // get the path part
+            navigate(path, { replace: true });
+        }
+    }, [navigate]);
+
+    // Handle page transitions
+    useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false
+            return
+        }
+
+        setIsVisible(false)
+        setTimeout(() => {
+            setIsVisible(true)
+        }, 200)
+    }, [location.pathname])
+
+    const pagePaths = ['/projects', '/blog', '/', '/experience', '/certifications']
 
     // Check for in-app browser on mount
     useEffect(() => {
@@ -38,11 +97,6 @@ export default function App() {
     // YouTube video ID for "Starwalking" Instrumental by Lil Nas X
     const youtubeVideoId = "C-Hx3oS7Nfw"
     const startTime = 0 // Start at beginning
-
-    const handlePageChange = (newPage) => {
-        setPage(newPage)
-        setSelectedProject(null) // Clear selected project when navigating
-    }
 
     const toggleMusic = () => {
         if (!isPlaying) {
@@ -115,16 +169,34 @@ export default function App() {
         
         <Toaster position="bottom-right" className="mb-16 md:mb-20" />
         <Header 
-            activePage={page} 
+            activePage={activePage} 
             labels={pageLabels} 
-            onNavigate={handlePageChange} 
+            onNavigate={(path) => navigate(path)}
             selectedProject={selectedProject} 
-            onBack={() => setSelectedProject(null)}
+            onBack={() => navigate(-1)}
             isPlaying={isPlaying}
             toggleMusic={toggleMusic}
         />
-        <Body activePage={page} selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
-        <Footer setPage={handlePageChange} activePage={page} labels={pageLabels}/>
+        <main className="min-h-screen pt-16 pb-20 md:pt-18 md:pb-22 lg:pt-20 lg:pb-24 px-3" style={{ backgroundColor: "var(--background)" }}>
+            <div 
+                style={{ 
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 200ms ease-out, transform 200ms ease-out'
+                }}
+            >
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Card onSelectProject={(project) => navigate(`/projects/${project.id}`)} />} />
+                    <Route path="/projects/:id" element={<ProjectDetail />} />
+                    <Route path="/blog" element={<BlogList onSelectBlog={(blog) => navigate(`/blog/${blog.id}`)} />} />
+                    <Route path="/blog/:id" element={<BlogDetail />} />
+                    <Route path="/experience" element={<ExperienceList />} />
+                    <Route path="/certifications" element={<Certifications />} />
+                </Routes>
+            </div>
+        </main>
+        <Footer setPage={(newPage) => navigate(pagePaths[newPage])} activePage={activePage} labels={pageLabels} pagePaths={pagePaths}/>
         
         {/* YouTube Player - Hidden, audio only */}
         {isPlaying && (

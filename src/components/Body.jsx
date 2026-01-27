@@ -19,6 +19,15 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
     const [pendingProject, setPendingProject] = useState(null)
     const [pendingBlog, setPendingBlog] = useState(null)
 
+    const pageHashes = ['#projects', '#blog', '#home', '#experience', '#certifications']
+
+    // Set initial hash on mount
+    useEffect(() => {
+        if (window.location.hash === '' || window.location.hash === '#') {
+            window.history.replaceState(null, '', '#home')
+        }
+    }, [])
+
     // Handle browser back/forward for project detail
     useEffect(() => {
         const onPopState = (e) => {
@@ -28,6 +37,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                 setDisplayedProject(null);
                 closingProject.current = false;
                 setIsVisible(true);
+                window.history.replaceState(null, '', '#projects');
             }, 200);
         };
         if (displayedProject) {
@@ -48,6 +58,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
                 setDisplayedBlog(null);
                 closingBlog.current = false;
                 setIsVisible(true);
+                window.history.replaceState(null, '', '#blog');
             }, 200);
         };
         if (displayedBlog) {
@@ -99,6 +110,7 @@ export default function Body({activePage, selectedProject, setSelectedProject}){
             setDisplayedPage(activePage)
             setDisplayedProject(selectedProject)
             setDisplayedBlog(selectedBlog)
+            window.history.replaceState(null, '', pageHashes[activePage])
             // Small delay before fading in
             setTimeout(() => {
                 setIsVisible(true)
