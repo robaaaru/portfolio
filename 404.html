@@ -17,7 +17,7 @@
       // with Internet Explorer (it is currently > 512 bytes)
       // --------------------------------------------------------------
       var l = window.location;
-      var segmentCount = 2; // for /portfolio/ (adjust if base path changes)
+      var segmentCount = 1; // for /portfolio/ (adjust if base path changes)
       var pathArray = l.pathname.split('/');
       var redirect = l.protocol + '//' + l.host + '/portfolio/';
       if (pathArray.length > segmentCount + 1) {
