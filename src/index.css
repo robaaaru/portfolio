@@ -25,6 +25,15 @@
 
 html {
   scrollbar-gutter: stable;
+  --header-h: 3.25rem;  /* h-13 */
+}
+
+@media (min-width: 768px) {
+  html { --header-h: 3.75rem; } /* h-15 */
+}
+
+@media (min-width: 1024px) {
+  html { --header-h: 4.5rem; } /* h-18 */
 }
 
 html, body {
