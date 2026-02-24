@@ -1,38 +1,29 @@
 [
     {
         "id": 1,
-        "title": "AWS Certified Solutions Architect",
-        "issuer": "Amazon Web Services",
-        "date": "2024",
-        "image": "https://placehold.co/300x200?text=AWS+Cert",
-        "credentialId": "AWS-123456",
+        "title": "SAP Certified Associate - Positioning SAP Business Suite via SAP Customer Experience Solutions",
+        "issuer": "SAP",
+        "date": "Nov 2026",
+        "image": "https://placehold.co/300x200?text=SAP",
+        "credentialId": "OCI 1Z0-1151-25",
         "url": "https://aws.amazon.com/certification/"
     },
     {
         "id": 2,
-        "title": "Google Cloud Professional Developer",
-        "issuer": "Google Cloud",
-        "date": "2023",
-        "image": "https://placehold.co/300x200?text=Google+Cloud",
+        "title": "Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional",
+        "issuer": "Oracle",
+        "date": "Sept 2023",
+        "image": "https://placehold.co/300x200?text=Oracle",
         "credentialId": "GCP-789012",
-        "url": "https://cloud.google.com/certification"
+        "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=F9BF5689D2CF7EC5B3B68A9DA43BDAC8665C9B0918E53999921A4DB8BB80C76F"
     },
     {
         "id": 3,
-        "title": "Microsoft Certified: Azure Developer Associate",
-        "issuer": "Microsoft",
-        "date": "2023",
-        "image": "https://placehold.co/300x200?text=Azure+Cert",
+        "title": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+        "issuer": "Orcale",
+        "date": "Sept 2025",
+        "image": "https://placehold.co/300x200?text=Oracle",
         "credentialId": "MS-345678",
-        "url": "https://learn.microsoft.com/en-us/certifications/"
-    },
-    {
-        "id": 4,
-        "title": "Certified Kubernetes Administrator",
-        "issuer": "Cloud Native Computing Foundation",
-        "date": "2024",
-        "image": "https://placehold.co/300x200?text=CKA",
-        "credentialId": "CKA-901234",
-        "url": "https://www.cncf.io/certification/cka/"
+        "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=4F1BE21C1755C8099C0B914412B91023273E0EE58EFF63F77D380A983A1D6D86"
     }
 ]
