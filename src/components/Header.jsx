@@ -11,8 +11,7 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
         if (typeof window === "undefined") return "light"
         const stored = window.localStorage.getItem("theme")
         if (stored === "light" || stored === "dark") return stored
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-        return prefersDark ? "dark" : "light"
+        return "light"
     })
 
     const goHome = (event) => {

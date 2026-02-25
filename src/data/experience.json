@@ -17,8 +17,9 @@
     "date": "Jan 2026 - Present",
     "image": "https://placehold.co/128x128?text=Ateneo",
     "responsibilities": [
-      "Designed and implemented AI-driven solutions for post-disaster scenarios",
-      "Developed computer vision technologies for agricultural applications,"
+      "Designed and implemented AI-driven solutions for post-disaster scenarios. Utilizing InsightFace for facial recognition and ArcFace for face detection, the project ensures evacuee reunification in case of disaster",
+      "Developed computer vision technologies for agricultural applications by integrating a YOLO model to outdoor aquaponics for discoloration and pest detection",
+      "Co-authored the project's corresponding research paper for publication"
     ]
   }
   
