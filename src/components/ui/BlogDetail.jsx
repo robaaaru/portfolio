@@ -1,7 +1,8 @@
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import blogDetails from '../../data/blogDetails.json';
+import blogDetails from '../../data/blogDetails.js';
 import blogs from '../../data/blogs.json';
+import ContentRenderer from './ContentRenderer';
 
 export default function BlogDetail() {
     const { id } = useParams();
@@ -16,7 +17,7 @@ export default function BlogDetail() {
         return <div>Blog not found</div>;
     }
 
-    const { title, date, readTime, image } = blog;
+    const { title, date, readTime } = blog;
     const detail = blogDetails.find(d => d.id === parseInt(id));
     const content = detail ? detail.content : [];
 
@@ -47,34 +48,8 @@ export default function BlogDetail() {
                     </div>
                 </div>
 
-                {/* Image */}
-                {image && (
-                    <div className="mb-6">
-                        <img
-                            src={image}
-                            alt={title}
-                            className="w-full h-80 md:h-96 object-cover rounded-lg"
-                        />
-                    </div>
-                )}
-
-                {/* Description */}
-                <div className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                    {content.map((paragraph, index) => (
-                        <p key={index} className="mb-6">
-                            {index === 0 ? (
-                                <>
-                                    <span className="text-5xl font-bold float-left mr-2 mt-1" style={{ color: "var(--foreground)" }}>
-                                        {paragraph.charAt(0)}
-                                    </span>
-                                    {paragraph.slice(1)}
-                                </>
-                            ) : (
-                                paragraph
-                            )}
-                        </p>
-                    ))}
-                </div>
+                {/* Content Blocks */}
+                <ContentRenderer content={content} />
             </div>
         </div>
     );

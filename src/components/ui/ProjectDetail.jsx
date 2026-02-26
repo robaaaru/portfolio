@@ -1,10 +1,9 @@
 import { Badge } from "@/components/retroui/Badge";
 import { ArrowLeft } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Carousel } from "@/components/retroui/Carousel";
-import Autoplay from "embla-carousel-autoplay";
 import projects from '../../data/projects.json';
-import projectDetails from '../../data/projectDetails.json';
+import projectDetails from '../../data/projectDetails.js';
+import ContentRenderer from './ContentRenderer';
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -83,45 +82,8 @@ export default function ProjectDetail() {
                     <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--foreground)" }}>
                         Project Details
                     </h2>
-                    <div className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                        {content.map((paragraph, index) => (
-                            <p key={index} className="mb-4">
-                                {paragraph}
-                            </p>
-                        ))}
-                    </div>
+                    <ContentRenderer content={content} />
                 </div>
-
-                {/* Screenshots */}
-                {detail && detail.screenshots && detail.screenshots.length > 0 && (
-                    <div className="mb-6">
-                        <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--foreground)" }}>
-                            Screenshots
-                        </h2>
-                        <Carousel
-                            opts={{
-                                align: "start",
-                                loop: true,
-                            }}
-                            plugins={[
-                                Autoplay({
-                                    delay: 3000,
-                                }),
-                            ]}
-                            className="w-full"
-                        >
-                            <Carousel.Content>
-                                {detail.screenshots.map((screenshot, index) => (
-                                    <Carousel.Item key={index} className="basis-full">
-                                        <img src={screenshot} alt={`Screenshot ${index + 1}`} className="w-full h-96 object-cover rounded border" style={{ borderColor: "var(--card-border)" }} />
-                                    </Carousel.Item>
-                                ))}
-                            </Carousel.Content>
-                            <Carousel.Previous className="left-2 bg-card border-card-border text-card-foreground hover:bg-card-foreground hover:text-card" />
-                            <Carousel.Next className="right-2 bg-card border-card-border text-card-foreground hover:bg-card-foreground hover:text-card" />
-                        </Carousel>
-                    </div>
-                )}
 
                 {/* Actions */}
                 {url && url !== "#" && (

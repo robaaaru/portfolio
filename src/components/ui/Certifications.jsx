@@ -97,7 +97,7 @@ export default function Certifications() {
                     style={{
                         top: "var(--header-h, 3.25rem)",
                         bottom: 0,
-                        backgroundColor: isDark ? "rgba(255,255,255,0.75)" : "rgba(0,0,0,0.75)",
+                        backgroundColor: isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.25)",
                         opacity: visible ? 1 : 0,
                         transition: "opacity 200ms ease",
                     }}
