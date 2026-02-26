@@ -16,9 +16,52 @@ export default function BlogDetail() {
         return <div>Blog not found</div>;
     }
 
-    const { title, date, readTime, image } = blog;
+    const { title, date, readTime } = blog;
     const detail = blogDetails.find(d => d.id === parseInt(id));
     const content = detail ? detail.content : [];
+
+    const renderBlock = (block, index) => {
+        switch (block.type) {
+            case 'text':
+                return (
+                    <p key={index} className="mb-6 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
+                        {block.dropCap ? (
+                            <>
+                                <span className="text-5xl font-bold float-left mr-2 mt-1" style={{ color: "var(--foreground)" }}>
+                                    {block.value.charAt(0)}
+                                </span>
+                                {block.value.slice(1)}
+                            </>
+                        ) : (
+                            block.value
+                        )}
+                    </p>
+                );
+            case 'image':
+                return (
+                    <figure key={index} className="mb-6">
+                        <img
+                            src={block.src}
+                            alt={block.alt || ''}
+                            className="w-full rounded-lg object-cover"
+                        />
+                        {block.caption && (
+                            <figcaption className="text-sm text-center mt-2 opacity-60 italic" style={{ color: "var(--foreground)" }}>
+                                {block.caption}
+                            </figcaption>
+                        )}
+                    </figure>
+                );
+            case 'heading':
+                return (
+                    <h2 key={index} className="text-xl font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
+                        {block.value}
+                    </h2>
+                );
+            default:
+                return null;
+        }
+    };
 
     return (
         <div className="mx-auto w-full max-w-4xl pt-4 px-4">
@@ -47,33 +90,9 @@ export default function BlogDetail() {
                     </div>
                 </div>
 
-                {/* Image */}
-                {image && (
-                    <div className="mb-6">
-                        <img
-                            src={image}
-                            alt={title}
-                            className="w-full h-80 md:h-96 object-cover rounded-lg"
-                        />
-                    </div>
-                )}
-
-                {/* Description */}
-                <div className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                    {content.map((paragraph, index) => (
-                        <p key={index} className="mb-6">
-                            {index === 0 ? (
-                                <>
-                                    <span className="text-5xl font-bold float-left mr-2 mt-1" style={{ color: "var(--foreground)" }}>
-                                        {paragraph.charAt(0)}
-                                    </span>
-                                    {paragraph.slice(1)}
-                                </>
-                            ) : (
-                                paragraph
-                            )}
-                        </p>
-                    ))}
+                {/* Content Blocks */}
+                <div>
+                    {content.map((block, index) => renderBlock(block, index))}
                 </div>
             </div>
         </div>

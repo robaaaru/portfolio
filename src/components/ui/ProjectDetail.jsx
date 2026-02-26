@@ -1,8 +1,6 @@
 import { Badge } from "@/components/retroui/Badge";
 import { ArrowLeft } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Carousel } from "@/components/retroui/Carousel";
-import Autoplay from "embla-carousel-autoplay";
 import projects from '../../data/projects.json';
 import projectDetails from '../../data/projectDetails.json';
 
@@ -22,6 +20,41 @@ export default function ProjectDetail() {
     const { title, description, techStack, url, ongoing } = project;
     const detail = projectDetails.find(d => d.id === idNum);
     const content = detail ? detail.content : [];
+
+    const renderBlock = (block, index) => {
+        switch (block.type) {
+            case 'text':
+                return (
+                    <p key={index} className="mb-4 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
+                        {block.value}
+                    </p>
+                );
+            case 'image':
+                return (
+                    <figure key={index} className="mb-6">
+                        <img
+                            src={block.src}
+                            alt={block.alt || ''}
+                            className="w-full rounded object-cover border"
+                            style={{ borderColor: "var(--card-border)" }}
+                        />
+                        {block.caption && (
+                            <figcaption className="text-sm text-center mt-2 opacity-60 italic" style={{ color: "var(--foreground)" }}>
+                                {block.caption}
+                            </figcaption>
+                        )}
+                    </figure>
+                );
+            case 'heading':
+                return (
+                    <h3 key={index} className="text-base font-semibold mb-3 mt-6" style={{ color: "var(--foreground)" }}>
+                        {block.value}
+                    </h3>
+                );
+            default:
+                return null;
+        }
+    };
 
     return (
         <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem] pt-4 px-4">
@@ -83,45 +116,10 @@ export default function ProjectDetail() {
                     <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--foreground)" }}>
                         Project Details
                     </h2>
-                    <div className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                        {content.map((paragraph, index) => (
-                            <p key={index} className="mb-4">
-                                {paragraph}
-                            </p>
-                        ))}
+                    <div>
+                        {content.map((block, index) => renderBlock(block, index))}
                     </div>
                 </div>
-
-                {/* Screenshots */}
-                {detail && detail.screenshots && detail.screenshots.length > 0 && (
-                    <div className="mb-6">
-                        <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--foreground)" }}>
-                            Screenshots
-                        </h2>
-                        <Carousel
-                            opts={{
-                                align: "start",
-                                loop: true,
-                            }}
-                            plugins={[
-                                Autoplay({
-                                    delay: 3000,
-                                }),
-                            ]}
-                            className="w-full"
-                        >
-                            <Carousel.Content>
-                                {detail.screenshots.map((screenshot, index) => (
-                                    <Carousel.Item key={index} className="basis-full">
-                                        <img src={screenshot} alt={`Screenshot ${index + 1}`} className="w-full h-96 object-cover rounded border" style={{ borderColor: "var(--card-border)" }} />
-                                    </Carousel.Item>
-                                ))}
-                            </Carousel.Content>
-                            <Carousel.Previous className="left-2 bg-card border-card-border text-card-foreground hover:bg-card-foreground hover:text-card" />
-                            <Carousel.Next className="right-2 bg-card border-card-border text-card-foreground hover:bg-card-foreground hover:text-card" />
-                        </Carousel>
-                    </div>
-                )}
 
                 {/* Actions */}
                 {url && url !== "#" && (

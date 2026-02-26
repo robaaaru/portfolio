@@ -2,36 +2,153 @@
     {
         "id": 1,
         "content": [
-            "This in-depth tutorial walks you through the entire process of creating a modern React application using Vite as the build tool. We'll cover project initialization, component structure, state management, and deployment strategies.",
-            "You'll learn about Vite's lightning-fast hot module replacement, tree-shaking capabilities, and how it compares to other bundlers like Webpack. By the end of this guide, you'll have a solid foundation for building scalable React applications with optimal performance."
+            {
+                "type": "image",
+                "src": "/portfolio/assets/c2.jpg",
+                "alt": "Catalyst Collider Design Challenge venue",
+                "caption": "The competition floor at T.I.P Quezon City"
+            },
+            {
+                "type": "text",
+                "value": "This in-depth tutorial walks you through the entire process of creating a modern React application using Vite as the build tool. We'll cover project initialization, component structure, state management, and deployment strategies.",
+                "dropCap": true
+            },
+             {
+                "type": "image",
+                "src": "/portfolio/assets/portfolio1.png",
+                "alt": "Participants at work",
+                "caption": "Teams brainstorming during the challenge"
+            },
+            {
+                "type": "text",
+                "value": "You'll learn about Vite's lightning-fast hot module replacement, tree-shaking capabilities, and how it compares to other bundlers like Webpack. By the end of this guide, you'll have a solid foundation for building scalable React applications with optimal performance."
+            },
+            {
+                "type": "image",
+                "src": "/portfolio/assets/c2.jpg",
+                "alt": "Participants at work",
+                "caption": "Teams brainstorming during the challenge"
+            },
+            {
+                "type": "text",
+                "value": "The competition pushed every participant to think creatively under pressure, drawing out skills they didn't know they had."
+            }
         ]
     },
     {
         "id": 2,
         "content": [
-            "Tailwind CSS has revolutionized how we approach styling in modern web development. This comprehensive guide explores the utility-first approach, showing you how to build responsive, maintainable UIs without writing custom CSS.",
-            "We'll dive into Tailwind's responsive design system, component extraction strategies, and best practices for large-scale applications. You'll learn about the design tokens, spacing scale, and how to customize Tailwind to match your brand's design system."
+            {
+                "type": "text",
+                "value": "Tailwind CSS has revolutionized how we approach styling in modern web development. This comprehensive guide explores the utility-first approach, showing you how to build responsive, maintainable UIs without writing custom CSS.",
+                "dropCap": true
+            },
+            {
+                "type": "text",
+                "value": "We'll dive into Tailwind's responsive design system, component extraction strategies, and best practices for large-scale applications."
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/400?random=21",
+                "alt": "DOST RSTW exhibit hall",
+                "caption": "The main exhibit hall showcasing regional innovations"
+            },
+            {
+                "type": "text",
+                "value": "You'll learn about the design tokens, spacing scale, and how to customize Tailwind to match your brand's design system."
+            }
         ]
     },
     {
         "id": 3,
         "content": [
-            "The web development landscape is constantly evolving, with new technologies and paradigms emerging at a rapid pace. This article explores the most significant trends that will shape the industry in 2026 and beyond.",
-            "We'll discuss the rise of WebAssembly, the maturation of serverless architectures, the impact of AI on development workflows, and the growing importance of web performance and accessibility. Understanding these trends will help you stay ahead in your career and make informed decisions about technology choices."
+            {
+                "type": "text",
+                "value": "The web development landscape is constantly evolving, with new technologies and paradigms emerging at a rapid pace. This article explores the most significant trends that will shape the industry in 2026 and beyond.",
+                "dropCap": true
+            },
+            {
+                "type": "heading",
+                "value": "A Story Told in Frames"
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/450?random=31",
+                "alt": "Animation still - the tether",
+                "caption": "The moment the kite string breaks"
+            },
+            {
+                "type": "text",
+                "value": "We'll discuss the rise of WebAssembly, the maturation of serverless architectures, the impact of AI on development workflows, and the growing importance of web performance and accessibility."
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/450?random=32",
+                "alt": "Animation still - the flight",
+                "caption": "Learning to fly without the tether"
+            },
+            {
+                "type": "text",
+                "value": "Understanding these trends will help you stay ahead in your career and make informed decisions about technology choices."
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/450?random=33",
+                "alt": "Final scene",
+                "caption": "The closing frame of the film"
+            }
         ]
     },
     {
         "id": 4,
         "content": [
-            "Performance is crucial for user experience and business success. This guide covers advanced React optimization techniques that can significantly improve your application's speed and responsiveness.",
-            "We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis. You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application."
+            {
+                "type": "text",
+                "value": "Performance is crucial for user experience and business success. This guide covers advanced React optimization techniques that can significantly improve your application's speed and responsiveness.",
+                "dropCap": true
+            },
+            {
+                "type": "text",
+                "value": "We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis."
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/400?random=41",
+                "alt": "React DevTools profiler screenshot",
+                "caption": "Flame graph from React DevTools showing render bottlenecks"
+            },
+            {
+                "type": "text",
+                "value": "You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application."
+            }
         ]
     },
     {
         "id": 5,
         "content": [
-            "Machine learning is transforming industries across the globe, and Python has become the go-to language for ML development. This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment.",
-            "We'll work with popular libraries like scikit-learn, pandas, and matplotlib to build real-world projects. By the end, you'll have the knowledge and confidence to start your journey in machine learning and apply these techniques to solve practical problems."
+            {
+                "type": "text",
+                "value": "Machine learning is transforming industries across the globe, and Python has become the go-to language for ML development.",
+                "dropCap": true
+            },
+            {
+                "type": "image",
+                "src": "https://picsum.photos/800/400?random=51",
+                "alt": "Python ML workflow diagram",
+                "caption": "A typical supervised learning pipeline"
+            },
+            {
+                "type": "heading",
+                "value": "Getting Hands-On with scikit-learn"
+            },
+            {
+                "type": "text",
+                "value": "This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment."
+            },
+            {
+                "type": "text",
+                "value": "We'll work with popular libraries like scikit-learn, pandas, and matplotlib to build real-world projects. By the end, you'll have the knowledge and confidence to start your journey in machine learning."
+            }
         ]
     }
 ]
