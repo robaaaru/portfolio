@@ -1,7 +1,8 @@
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import blogDetails from '../../data/blogDetails.json';
+import blogDetails from '../../data/blogDetails.js';
 import blogs from '../../data/blogs.json';
+import ContentRenderer from './ContentRenderer';
 
 export default function BlogDetail() {
     const { id } = useParams();
@@ -19,49 +20,6 @@ export default function BlogDetail() {
     const { title, date, readTime } = blog;
     const detail = blogDetails.find(d => d.id === parseInt(id));
     const content = detail ? detail.content : [];
-
-    const renderBlock = (block, index) => {
-        switch (block.type) {
-            case 'text':
-                return (
-                    <p key={index} className="mb-6 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                        {block.dropCap ? (
-                            <>
-                                <span className="text-5xl font-bold float-left mr-2 mt-1" style={{ color: "var(--foreground)" }}>
-                                    {block.value.charAt(0)}
-                                </span>
-                                {block.value.slice(1)}
-                            </>
-                        ) : (
-                            block.value
-                        )}
-                    </p>
-                );
-            case 'image':
-                return (
-                    <figure key={index} className="mb-6">
-                        <img
-                            src={block.src}
-                            alt={block.alt || ''}
-                            className="w-full rounded-lg object-cover"
-                        />
-                        {block.caption && (
-                            <figcaption className="text-sm text-center mt-2 opacity-60 italic" style={{ color: "var(--foreground)" }}>
-                                {block.caption}
-                            </figcaption>
-                        )}
-                    </figure>
-                );
-            case 'heading':
-                return (
-                    <h2 key={index} className="text-xl font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
-                        {block.value}
-                    </h2>
-                );
-            default:
-                return null;
-        }
-    };
 
     return (
         <div className="mx-auto w-full max-w-4xl pt-4 px-4">
@@ -91,9 +49,7 @@ export default function BlogDetail() {
                 </div>
 
                 {/* Content Blocks */}
-                <div>
-                    {content.map((block, index) => renderBlock(block, index))}
-                </div>
+                <ContentRenderer content={content} />
             </div>
         </div>
     );

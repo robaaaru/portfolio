@@ -54,6 +54,28 @@
             {
                 "type": "text",
                 "value": "3D models created in Blender bring the lab equipment to life, making the learning experience immersive and engaging. This project combines game development, AI, and educational technology to create a comprehensive learning platform."
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "heading",
+                "value": "Key Features"
+            },
+            {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                    "Immersive VR chemistry lab environment",
+                    "AI-driven student performance assessment",
+                    "Real-time instructor monitoring via WebRTC",
+                    "3D-modeled lab equipment built in Blender"
+                ]
+            },
+            {
+                "type": "callout",
+                "variant": "info",
+                "value": "VRSOS was presented at the 2025 DOST RSTW in NCR and received positive feedback from educators and industry professionals."
             }
         ]
     },

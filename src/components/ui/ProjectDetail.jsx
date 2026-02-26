@@ -2,7 +2,8 @@ import { Badge } from "@/components/retroui/Badge";
 import { ArrowLeft } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import projects from '../../data/projects.json';
-import projectDetails from '../../data/projectDetails.json';
+import projectDetails from '../../data/projectDetails.js';
+import ContentRenderer from './ContentRenderer';
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -20,41 +21,6 @@ export default function ProjectDetail() {
     const { title, description, techStack, url, ongoing } = project;
     const detail = projectDetails.find(d => d.id === idNum);
     const content = detail ? detail.content : [];
-
-    const renderBlock = (block, index) => {
-        switch (block.type) {
-            case 'text':
-                return (
-                    <p key={index} className="mb-4 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                        {block.value}
-                    </p>
-                );
-            case 'image':
-                return (
-                    <figure key={index} className="mb-6">
-                        <img
-                            src={block.src}
-                            alt={block.alt || ''}
-                            className="w-full rounded object-cover border"
-                            style={{ borderColor: "var(--card-border)" }}
-                        />
-                        {block.caption && (
-                            <figcaption className="text-sm text-center mt-2 opacity-60 italic" style={{ color: "var(--foreground)" }}>
-                                {block.caption}
-                            </figcaption>
-                        )}
-                    </figure>
-                );
-            case 'heading':
-                return (
-                    <h3 key={index} className="text-base font-semibold mb-3 mt-6" style={{ color: "var(--foreground)" }}>
-                        {block.value}
-                    </h3>
-                );
-            default:
-                return null;
-        }
-    };
 
     return (
         <div className="mx-auto w-full md:w-[42rem] lg:w-[46rem] pt-4 px-4">
@@ -116,9 +82,7 @@ export default function ProjectDetail() {
                     <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--foreground)" }}>
                         Project Details
                     </h2>
-                    <div>
-                        {content.map((block, index) => renderBlock(block, index))}
-                    </div>
+                    <ContentRenderer content={content} />
                 </div>
 
                 {/* Actions */}

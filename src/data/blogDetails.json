@@ -112,14 +112,57 @@
                 "value": "We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis."
             },
             {
+                "type": "callout",
+                "variant": "tip",
+                "value": "Always measure before optimizing. Use React DevTools Profiler to identify actual bottlenecks rather than guessing."
+            },
+            {
+                "type": "code",
+                "language": "jsx",
+                "value": "const MemoizedList = React.memo(({ items }) => {\n  return items.map(item => <ListItem key={item.id} {...item} />);\n});"
+            },
+            {
                 "type": "image",
                 "src": "https://picsum.photos/800/400?random=41",
                 "alt": "React DevTools profiler screenshot",
                 "caption": "Flame graph from React DevTools showing render bottlenecks"
             },
             {
+                "type": "heading",
+                "value": "Key Optimization Techniques"
+            },
+            {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                    "Code splitting with React.lazy() and Suspense",
+                    "Memoization using React.memo, useMemo, and useCallback",
+                    "Virtualization for lists with 1000+ items",
+                    "Bundle analysis with source-map-explorer"
+                ]
+            },
+            {
+                "type": "callout",
+                "variant": "warning",
+                "value": "Avoid premature optimization — wrapping everything in useMemo can actually hurt performance due to the overhead of memoization itself."
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "quote",
+                "value": "The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times.",
+                "attribution": "Donald Knuth"
+            },
+            {
                 "type": "text",
                 "value": "You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application."
+            },
+            {
+                "type": "link-card",
+                "url": "https://react.dev/reference/react/memo",
+                "title": "React.memo — React Documentation",
+                "description": "Official guide on when and how to use React.memo for component memoization."
             }
         ]
     },
@@ -144,6 +187,14 @@
             {
                 "type": "text",
                 "value": "This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment."
+            },
+            {
+                "type": "gallery",
+                "images": [
+                    { "src": "https://picsum.photos/400/300?random=52", "alt": "Data preprocessing", "caption": "Cleaning data" },
+                    { "src": "https://picsum.photos/400/300?random=53", "alt": "Model training", "caption": "Training loop" },
+                    { "src": "https://picsum.photos/400/300?random=54", "alt": "Results visualization", "caption": "Accuracy plot" }
+                ]
             },
             {
                 "type": "text",
