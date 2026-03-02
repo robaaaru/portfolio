@@ -1,4 +1,5 @@
 import { Info, AlertTriangle, Lightbulb, ExternalLink } from 'lucide-react';
+import SkeletonImage from './SkeletonImage';
 
 const calloutConfig = {
     info: {
@@ -41,7 +42,7 @@ function TextBlock({ block }) {
 function ImageBlock({ block }) {
     return (
         <figure className="mb-6">
-            <img
+            <SkeletonImage
                 src={block.src}
                 alt={block.alt || ''}
                 className="w-full rounded-lg object-cover"
@@ -57,7 +58,7 @@ function ImageBlock({ block }) {
 
 function HeadingBlock({ block }) {
     return (
-        <h2 className="text-xl font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
+        <h2 className="text-lg font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
             {block.value}
         </h2>
     );
@@ -161,7 +162,7 @@ function GalleryBlock({ block }) {
         <div className={`mb-6 grid ${cols} gap-3`}>
             {block.images.map((img, i) => (
                 <figure key={i}>
-                    <img
+                    <SkeletonImage
                         src={img.src}
                         alt={img.alt || ''}
                         className="w-full h-48 object-cover rounded-lg"
@@ -213,6 +214,19 @@ function LinkCardBlock({ block }) {
             onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "none")}
             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)")}
         >
+            {block.thumbnail && (
+                <div
+                    className="flex-shrink-0 rounded overflow-hidden"
+                    style={{ width: "4rem", height: "4rem", border: "1px solid var(--border)" }}
+                >
+                    <SkeletonImage
+                        src={block.thumbnail}
+                        alt=""
+                        className="w-full h-full object-cover"
+                        draggable={false}
+                    />
+                </div>
+            )}
             <div className="flex-1 min-w-0">
                 <span className="text-base font-semibold block truncate" style={{ color: "var(--foreground)" }}>
                     {block.title}
@@ -234,7 +248,7 @@ function FloatImageBlock({ block }) {
         <figure
             className={`mb-3 w-full sm:w-48 md:w-56 ${isLeft ? 'sm:float-left sm:mr-5' : 'sm:float-right sm:ml-5'}`}
         >
-            <img
+            <SkeletonImage
                 src={block.src}
                 alt={block.alt || ''}
                 className="w-full rounded-lg object-cover"

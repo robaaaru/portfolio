@@ -33,8 +33,8 @@
     },
     {
         "id": 5,
-        "title": "Smart Greenhouse Detection using YOLO",
-        "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
+        "title": "AI-Powered Post-Disaster Resiliency System",
+        "description": "An AI-Integrated evacuation center for a community-led and sustainable post-disaster approach",
         "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
         "url": "#",
         "ongoing": true

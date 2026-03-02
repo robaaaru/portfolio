@@ -5,8 +5,8 @@ import { Play, Pause } from "lucide-react"
 import { toast } from "sonner"
 import { Link } from "react-router-dom"
 
-export default function Header({ activePage = 0, labels = [], onNavigate, selectedProject, onBack, isPlaying, toggleMusic }){
-    const currentLabel = selectedProject ? selectedProject.title : (labels[activePage] || "Current")
+export default function Header({ activePage = 0, labels = [], onNavigate, selectedProject, selectedBlog, onBack, isPlaying, toggleMusic }){
+    const currentLabel = selectedProject ? selectedProject.title : selectedBlog ? selectedBlog.title : (labels[activePage] || "Current")
     const [theme, setTheme] = useState(() => {
         if (typeof window === "undefined") return "light"
         const stored = window.localStorage.getItem("theme")
@@ -59,6 +59,16 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
                             <>
                                 <BreadcrumbItem className="flex-shrink-0">
                                     <Link to="/projects" className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Projects</Link>
+                                </BreadcrumbItem>
+                                <BreadcrumbSeparator style={{ color: "var(--muted-foreground)" }} className="flex-shrink-0" />
+                                <BreadcrumbItem className="min-w-0">
+                                    <BreadcrumbPage className="text-sm md:text-base lg:text-lg font-semibold tracking-tight truncate block" style={{ color: "var(--foreground)" }}>{currentLabel}</BreadcrumbPage>
+                                </BreadcrumbItem>
+                            </>
+                        ) : selectedBlog ? (
+                            <>
+                                <BreadcrumbItem className="flex-shrink-0">
+                                    <Link to="/blog" className="text-sm md:text-base lg:text-lg font-semibold tracking-tight" style={{ color: "var(--foreground)" }}>Blog</Link>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator style={{ color: "var(--muted-foreground)" }} className="flex-shrink-0" />
                                 <BreadcrumbItem className="min-w-0">

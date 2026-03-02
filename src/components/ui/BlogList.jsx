@@ -1,4 +1,5 @@
 import blogData from '../../data/blogs.json';
+import SkeletonImage from './SkeletonImage';
 import { Calendar, Clock } from 'lucide-react';
 
 export default function BlogList({ onSelectBlog }) {
@@ -11,7 +12,7 @@ export default function BlogList({ onSelectBlog }) {
                             {/* Image */}
                             {blog.image && (
                                 <div className="flex-shrink-0 w-full md:w-48 h-48 md:h-32">
-                                    <img
+                                    <SkeletonImage
                                         src={blog.image}
                                         alt={blog.title}
                                         className="w-full h-full object-cover rounded"

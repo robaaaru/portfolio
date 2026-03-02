@@ -58,8 +58,9 @@
  *   A simple horizontal rule for visual section separation.
  *
  * LINK-CARD
- *   { type: "link-card", url: "https://...", title: "...", description: "..." }
+ *   { type: "link-card", url: "https://...", title: "...", description: "...", thumbnail: "/path/or/url" }
  *   description (optional) — subtitle below the title.
+ *   thumbnail (optional) — image shown on the left side of the card.
  *   Opens in a new tab. Use for GitHub links, live demos, references, etc.
  *
  * ────────────────────────────────────────────────────────────────────────────
@@ -69,36 +70,48 @@ const blogDetails = [
     {
         id: 1,
         content: [
+             {
+                type: "text",
+                value: "Earlier this year, I had the opportunity to participate in T.I.P QC's first ever design challenge, an experience that pushed me well beyond what I thought I was capable of at this stage of my academic journey.",
+                dropCap: true
+            },
             {
                 type: "image",
-                src: "/portfolio/assets/c2.jpg",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/c2.jpg",
                 alt: "Catalyst Collider Design Challenge venue",
                 caption: "The competition floor at T.I.P Quezon City"
             },
             {
                 type: "text",
-                value: "This in-depth tutorial walks you through the entire process of creating a modern React application using Vite as the build tool. We'll cover project initialization, component structure, state management, and deployment strategies.",
-                dropCap: true
+                value: "The project ran for eight months, and the pace was relentless from the start. Balancing tight constraints around time, resources, and technical scope meant that every decision had to be deliberate. There was little room for second-guessing, and the process taught me how to move quickly without cutting corners on quality."
+            },
+            {
+                type:"text",
+                value:"For the challenge's theme, our team developed a VR chemistry laboratory, a virtual environment designed to simulate hands-on lab experiences in an accessible and interactive way. Building it required navigating the intersection of instructional design, software development, and user experience, all at once. The process was iterative, sometimes frustrating, but ultimately one of the most rewarding things I have worked on."
             },
             {
                 type: "image",
-                src: "/portfolio/assets/portfolio1.png",
-                alt: "Participants at work",
-                caption: "Teams brainstorming during the challenge"
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/vrsos_blog_picture.PNG",
+                alt: "Development of chemistry lab assets in Blender",
+                caption: "Development of chemistry lab assets in Blender"
             },
             {
                 type: "text",
-                value: "You'll learn about Vite's lightning-fast hot module replacement, tree-shaking capabilities, and how it compares to other bundlers like Webpack. By the end of this guide, you'll have a solid foundation for building scalable React applications with optimal performance."
+                value: "One of the most significant moments of the challenge was the presentation stage, where we pitched our project to over 40 industry partners. Standing in front of professionals from various fields and articulating the value, functionality, and vision behind the product was a different kind of pressure than anything I had faced in a classroom setting. It sharpened how I communicate ideas, how I frame problems, and how I respond to critical questions on the spot."
             },
             {
                 type: "image",
-                src: "/portfolio/assets/c2.jpg",
-                alt: "Participants at work",
-                caption: "Teams brainstorming during the challenge"
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/vrsos_blogs_picture1.jpeg",
+                alt: "Industry matchmaking pitch",
+                caption: "Industry matchmaking pitch"
+            },
+             {
+                type: "text",
+                value: "One of the most significant moments of the challenge was the presentation stage, where we pitched our project to over 40 industry partners. Standing in front of professionals from various fields and articulating the value, functionality, and vision behind the product was a different kind of pressure than anything I had faced in a classroom setting. It sharpened how I communicate ideas, how I frame problems, and how I respond to critical questions on the spot."
             },
             {
-                type: "text",
-                value: "The competition pushed every participant to think creatively under pressure, drawing out skills they didn't know they had."
+                type:"text",
+                value:"Beyond the technical output, the experience gave me a clearer picture of how the industry actually operates. From project timelines and stakeholder expectations to the importance of iteration and documentation, I came away with practical knowledge that coursework alone could not have provided. It was a challenge in every sense of the word, and one I am glad I took on."
             }
         ]
     },
@@ -107,23 +120,38 @@ const blogDetails = [
         content: [
             {
                 type: "text",
-                value: "Tailwind CSS has revolutionized how we approach styling in modern web development. This comprehensive guide explores the utility-first approach, showing you how to build responsive, maintainable UIs without writing custom CSS.",
+                value: "Being selected to present at the annual DOST Regional Science, Technology, and Innovation Week in NCR was an experience I did not take lightly. It was a platform that brought together innovators, researchers, and students from across the region, and having the chance to stand among them with something we actually built made the whole thing feel very real.",
                 dropCap: true
             },
             {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/blogs_dost_picture1.jpeg",
+                alt: "Animation still - the tether",
+                caption: "VRSOS Exhibition Booth"
+            },
+            {
                 type: "text",
-                value: "We'll dive into Tailwind's responsive design system, component extraction strategies, and best practices for large-scale applications."
+                value: "Throughout the event, I had the opportunity to present to senior high school and college students from different schools, walking them through the project and engaging with a wide range of audiences in a single setting. Each conversation was different. Some were curious about the technology, others were skeptical, and a few were genuinely excited about the possibilities. Adjusting to each group and finding the right way to explain the same ideas in different ways was one of the more valuable parts of the experience.",
             },
             {
                 type: "image",
-                src: "https://picsum.photos/800/400?random=21",
-                alt: "DOST RSTW exhibit hall",
-                caption: "The main exhibit hall showcasing regional innovations"
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/dost_blogs_picture.jpeg",
+                alt: "VR Demo to Students",
+                caption: "VR Demo to Students"
             },
-            {
+            
+             {
                 type: "text",
-                value: "You'll learn about the design tokens, spacing scale, and how to customize Tailwind to match your brand's design system."
-            }
+                value: 'At the core of the presentation was a demonstration of what VR can actually do in an educational context. The focus was on its capacity to provide a safe and controlled environment for learning, particularly in scenarios where real-world practice carries risk or requires resources that are not always available. Showing students how a virtual chemistry lab could replicate hands-on experimentation without the hazards of a physical lab made the use case tangible rather than theoretical. It shifted the conversation from "what is VR" to "where can this actually be useful.'
+            },
+             {
+                type: "text",
+                value: "There is something distinct about presenting work you genuinely poured effort into. It was not just a school requirement being demonstrated for a grade. It was a finished product, shown to real people, in a real venue. That distinction made every question feel worth answering and every moment in front of an audience feel worthwhile."
+            },
+
+
+
+           
         ]
     },
     {
@@ -131,144 +159,48 @@ const blogDetails = [
         content: [
             {
                 type: "text",
-                value: "The web development landscape is constantly evolving, with new technologies and paradigms emerging at a rapid pace. This article explores the most significant trends that will shape the industry in 2026 and beyond.",
+                value: "This was my first time making an animated and narrated writing video, and looking back, I think putting words into a format like this made me feel like I was stepping on foreign soil; a place that isn't just pen and paper. Countless storyboard iterations, midnight voice-recordings, and choosing the right word on my 15-word vocabulary. It was hard but it's worth it.",
                 dropCap: true
             },
             {
-                type: "heading",
-                value: "A Story Told in Frames"
-            },
-            {
                 type: "image",
-                src: "https://picsum.photos/800/450?random=31",
-                alt: "Animation still - the tether",
-                caption: "The moment the kite string breaks"
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/tether_and_flight.png",
+                alt: "A tether and flight",
+                caption: "A snapshot of the animation"
             },
             {
                 type: "text",
-                value: "We'll discuss the rise of WebAssembly, the maturation of serverless architectures, the impact of AI on development workflows, and the growing importance of web performance and accessibility."
+                value: "The piece is about something I have observed around me for a while, the way love and attachment tend to be more complicated than people let on. The comfort that quietly builds between two people, what it feels like when someone is no longer around, and the kind of peace that comes after something ends but still leaves you with questions. These are things I have seen play out in people close to me and in conversations I have been around long enough to think about."
             },
             {
                 type: "image",
-                src: "https://picsum.photos/800/450?random=32",
-                alt: "Animation still - the flight",
-                caption: "Learning to fly without the tether"
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/storyboarding.PNG",
+                alt: "One of my storyboard screenshots",
+                caption: "One of my storyboard screenshots"
             },
-            {
+             {
                 type: "text",
-                value: "Understanding these trends will help you stay ahead in your career and make informed decisions about technology choices."
+                value: "Writing it pushed me to be more precise about those observations. The animation and narration made it feel more complete in a way I did not fully anticipate. Hearing the words read back and watching them take shape visually helped me figure out what I was actually trying to say."
             },
-            {
-                type: "image",
-                src: "https://picsum.photos/800/450?random=33",
-                alt: "Final scene",
-                caption: "The closing frame of the film"
+            { 
+                type: "quote", 
+                value: "There's a cruel beauty in loving those things that allow you to fly away. Like the wings of a butterfly, they take you to places you never imagined. In letting go, there's a sense of liberation, a bittersweet feeling of watching something you cherish find its own path, even if it leads away. It's a reminder that love can be both a tether and a flight",
+                attribution: "Me" 
+            },
+             {
+                 type: "link-card", 
+                 url: "https://youtu.be/d4W886dx90U?si=V-6uKlGL4NSM6FDJ", 
+                 title: "[YOUTUBE] A tether and a flight",
+                 thumbnail:"/portfolio/assets/thumbnail.png"
             }
+
+            
+
+
+           
         ]
     },
-    {
-        id: 4,
-        content: [
-            {
-                type: "text",
-                value: "Performance is crucial for user experience and business success. This guide covers advanced React optimization techniques that can significantly improve your application's speed and responsiveness.",
-                dropCap: true
-            },
-            {
-                type: "text",
-                value: "We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis."
-            },
-            {
-                type: "callout",
-                variant: "tip",
-                value: "Always measure before optimizing. Use React DevTools Profiler to identify actual bottlenecks rather than guessing."
-            },
-            {
-                type: "code",
-                language: "jsx",
-                value: "const MemoizedList = React.memo(({ items }) => {\n  return items.map(item => <ListItem key={item.id} {...item} />);\n});"
-            },
-            {
-                type: "image",
-                src: "https://picsum.photos/800/400?random=41",
-                alt: "React DevTools profiler screenshot",
-                caption: "Flame graph from React DevTools showing render bottlenecks"
-            },
-            {
-                type: "heading",
-                value: "Key Optimization Techniques"
-            },
-            {
-                type: "list",
-                style: "unordered",
-                items: [
-                    "Code splitting with React.lazy() and Suspense",
-                    "Memoization using React.memo, useMemo, and useCallback",
-                    "Virtualization for lists with 1000+ items",
-                    "Bundle analysis with source-map-explorer"
-                ]
-            },
-            {
-                type: "callout",
-                variant: "warning",
-                value: "Avoid premature optimization — wrapping everything in useMemo can actually hurt performance due to the overhead of memoization itself."
-            },
-            {
-                type: "divider"
-            },
-            {
-                type: "quote",
-                value: "The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times.",
-                attribution: "Donald Knuth"
-            },
-            {
-                type: "text",
-                value: "You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application."
-            },
-            {
-                type: "link-card",
-                url: "https://react.dev/reference/react/memo",
-                title: "React.memo — React Documentation",
-                description: "Official guide on when and how to use React.memo for component memoization."
-            }
-        ]
-    },
-    {
-        id: 5,
-        content: [
-            {
-                type: "text",
-                value: "Machine learning is transforming industries across the globe, and Python has become the go-to language for ML development.",
-                dropCap: true
-            },
-            {
-                type: "image",
-                src: "https://picsum.photos/800/400?random=51",
-                alt: "Python ML workflow diagram",
-                caption: "A typical supervised learning pipeline"
-            },
-            {
-                type: "heading",
-                value: "Getting Hands-On with scikit-learn"
-            },
-            {
-                type: "text",
-                value: "This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment."
-            },
-            {
-                type: "gallery",
-                images: [
-                    { src: "https://picsum.photos/400/300?random=52", alt: "Data preprocessing", caption: "Cleaning data" },
-                    { src: "https://picsum.photos/400/300?random=53", alt: "Model training", caption: "Training loop" },
-                    { src: "https://picsum.photos/400/300?random=54", alt: "Results visualization", caption: "Accuracy plot" }
-                ]
-            },
-            {
-                type: "text",
-                value: "We'll work with popular libraries like scikit-learn, pandas, and matplotlib to build real-world projects. By the end, you'll have the knowledge and confidence to start your journey in machine learning."
-            }
-        ]
-    }
+   
 ];
 
 export default blogDetails;

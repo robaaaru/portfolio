@@ -23,7 +23,7 @@
  *   Renders 2–3 images side by side in a responsive grid.
  *   Ideal for before/after comparisons or screenshot collections.
  *
- * VIDEO
+ * VIDEO 
  *   { type: "video", src: "https://youtube.com/embed/ID", caption: "..." }
  *   Use the YouTube/Vimeo embed URL (not the watch URL).
  *   Great for demo walkthroughs or presentation recordings.
@@ -73,32 +73,45 @@ const projectDetails = [
     {
         id: 1,
         content: [
+             
             {
                 type: "image",
-                src: "/portfolio/assets/portfolio.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/portfolio.png",
                 alt: "Portfolio website homepage",
                 caption: "Homepage of the portfolio website"
             },
             {
                 type: "text",
-                value: "This portfolio website showcases my skills and projects as a full-stack developer. Built with React and Vite for optimal performance, it features a modern design with smooth animations and responsive layout. "
+                value: "This portfolio website showcases my journey as a developer. Built with React and Vite for optimal performance, it features a modern design with smooth animations and responsive layout. "
             },
-            {
-                type: "float-image",
-                src: "/portfolio/assets/portfolio.png",
-                alt: "Screenshot",
-                position: "left"    // or "right"
+              {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/portfolio1.png",
+                alt: "Portfolio website projects section",
+                caption: "Mobile view of homepage and projects section"
             },
             {
                 type: "text",
-                value: "The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design.The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design.The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design.The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design."
+                value: "The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design.The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design."
             },
             {
-                type: "image",
-                src: "/portfolio/assets/portfolio1.png",
-                alt: "Portfolio website projects section",
-                caption: "Projects section of the portfolio"
-            }
+                type:"divider"
+            },
+            {
+                type:"heading",
+                value:"Key features"
+            },
+              {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "Responsive design",
+                    "Phone-like navigation",
+                    "Easy dark-to-light mode toggle",
+                    "Minimalist/RetroUI design",
+                ]
+            },
+          
         ]
     },
     {
@@ -106,7 +119,7 @@ const projectDetails = [
         content: [
             {
                 type: "image",
-                src: "/portfolio/assets/vrsos.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/vrsos.png",
                 alt: "VRSOS virtual lab environment",
                 caption: "The virtual chemistry lab in VRSOS"
             },
@@ -124,7 +137,7 @@ const projectDetails = [
             },
             {
                 type: "image",
-                src: "/portfolio/assets/vrsos1.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/vrsos1.png",
                 alt: "VRSOS instructor monitoring dashboard",
                 caption: "Instructor monitoring dashboard"
             },
@@ -160,17 +173,37 @@ const projectDetails = [
         id: 3,
         content: [
             {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/luxelane.png",
+                alt: "LuxeLane landing page and registration",
+                caption: "LuxeLane landing page and registration"
+            },
+            {
                 type: "text",
                 value: "LuxeLane is a comprehensive e-commerce platform built with traditional web technologies. The front-end uses HTML, CSS, and JavaScript to create an intuitive user interface with dynamic product displays."
             },
             {
                 type: "text",
-                value: "The back-end, powered by PHP, handles user authentication, inventory management, and secure payment processing. The platform features a seamless checkout flow with multiple payment options and order tracking."
+                value: "This project demonstrates my ability to build full-stack web applications using server-side technologies and create user-friendly e-commerce solutions."
+            },
+             {
+                type: "divider"
             },
             {
-                type: "text",
-                value: "This project demonstrates my ability to build full-stack web applications using server-side technologies and create user-friendly e-commerce solutions."
-            }
+                type: "heading",
+                value: "Key Features"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "User authentication",
+                    "Inventory management",
+                    "Seamless booking",
+                    "Secure payment processing"
+                ]
+            },
+
         ]
     },
     {
@@ -187,6 +220,26 @@ const projectDetails = [
             {
                 type: "text",
                 value: "This project combines hardware integration, mobile development, and data analytics to address environmental concerns and promote sustainable living."
+            },
+               {
+                type:"divider"
+            },
+            {
+                type: "heading",
+                value: "Key Features"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "In-board automated alarm system",
+                    "Mobile app integration",
+                ]
+            },
+            {
+                type: "callout",
+                variant: "warning",
+                value: "Unfortunately, no actual demonstration photos were found at the time of writing"
             }
         ]
     },
@@ -195,19 +248,44 @@ const projectDetails = [
         content: [
             {
                 type: "text",
-                value: "This smart greenhouse project utilizes computer vision and AI to monitor plant health and optimize growing conditions. Using YOLO (You Only Look Once) object detection, the system can identify different plant species and detect signs of disease or nutrient deficiencies."
+                value: "The AI-powered system includes computer vision both for family closure and reunification. The system utilizes Unmanned Aerial Vehicles (UAVs) to scan for survivors and reunify ecavuees in post-disaster scenarios"
+            },
+            {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/face_detection.PNG",
+                alt: "Offline-first webpage interface for facial detection and recognition",
+                caption: "Offline-first webpage interface for facial detection and recognition"
+            },
+            {
+                type: "text",
+                value: "The system also support in-ground detection using computer vision models built around Convulational Neural Networks (CNN). The system also include food and medicine detection using YOLO, OCR, and Google Gemini 2.5 to ensure proper distribution of consumables"
+            },
+              {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/food_detection.PNG",
+                alt: "Mobile-based food and medicine detection",
+                caption: "Mobile-based food and medicine detection"
+            },
+            {
+                type:"divider"
             },
             {
                 type: "heading",
-                value: "IoT Sensor Integration"
+                value: "Key Features"
             },
             {
-                type: "text",
-                value: "Integrated IoT sensors collect data on temperature, humidity, soil moisture, and light levels. Machine learning algorithms analyze this data to provide automated recommendations for watering, fertilizing, and environmental control."
+                type: "list",
+                style: "unordered",
+                items: [
+                    "Face detection and Recognition",
+                    "Google Gemini 2.5 Integration",
+                    "Aerial Drone Detection"
+                ]
             },
             {
-                type: "text",
-                value: "The system includes a Python-based backend for data processing and analytics, with real-time monitoring capabilities. This project demonstrates the application of AI and IoT in agriculture for improved crop yields and resource efficiency."
+                type: "callout",
+                variant: "info",
+                value: "This system has been tested and validated in Tagulod, Pampanga. Furthermore, this system was used as a methodology to validate its corresponding published research paper"
             }
         ]
     }

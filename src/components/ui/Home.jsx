@@ -119,7 +119,7 @@ export default function Home() {
                     </p>
 
                     {/* Social Links */}
-                    <div className="flex gap-4 mt-6">
+                    <div className="flex gap-4 mt-6 justify-center md:justify-start">
                         <a 
                             href="https://github.com/robaaaru" 
                             target="_blank" 

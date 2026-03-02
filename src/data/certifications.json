@@ -4,7 +4,7 @@
         "title": "SAP Certified Associate - Positioning SAP Business Suite via SAP Customer Experience Solutions",
         "issuer": "SAP",
         "date": "Nov 2026",
-        "image": "/portfolio/assets/SAP.jpg",
+        "image": "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/SAP.jpg",
         "credentialId": "OCI 1Z0-1151-25",
         "url": "https://aws.amazon.com/certification/"
     },
@@ -13,7 +13,7 @@
         "title": "Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional",
         "issuer": "Oracle",
         "date": "Sept 2023",
-        "image": "/portfolio/assets/Tulagan_OCI Multicloud Architect Professional_page-0001.jpg",
+        "image": "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/Tulagan_OCI Multicloud Architect Professional_page-0001.jpg",
         "credentialId": "GCP-789012",
         "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=F9BF5689D2CF7EC5B3B68A9DA43BDAC8665C9B0918E53999921A4DB8BB80C76F"
     },
@@ -22,7 +22,7 @@
         "title": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
         "issuer": "Oracle",
         "date": "Sept 2025",
-        "image": "/portfolio/assets/Tulagan_OCI Foundations Assosciate_page-0001.jpg",
+        "image": "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/Tulagan_OCI Foundations Assosciate_page-0001.jpg",
         "credentialId": "MS-345678",
         "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=4F1BE21C1755C8099C0B914412B91023273E0EE58EFF63F77D380A983A1D6D86"
     }
