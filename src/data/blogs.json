@@ -5,40 +5,22 @@
         "date": "December 20, 2025",
         "excerpt": "My first shot at a competition. An opportunity to prove and improve.",
         "image": "/portfolio/assets/c2.jpg",
-        "readTime": "5 min read"
+        "readTime": "3 min read"
     },
     {
         "id": 2,
         "title": "2025 DOST Regional Science, Technology, and Innovation Week in NCR",
         "date": "January 10, 2026",
         "excerpt": "A glimpse into the annual DOST RSTW in NCR, featuring innovative projects and ideas.",
-        "image": "https://picsum.photos/400/300?random=2",
-        "readTime": "7 min read"
+        "image": "/portfolio/assets/dost_blogs_picture.jpeg",
+        "readTime": "3 min read"
     },
     {
         "id": 3,
         "title": "A Tether and a Flight",
         "date": "January 5, 2026",
         "excerpt": "A profound short animated story revolving around the nature of human attachment.",
-        "image": "https://picsum.photos/400/300?random=3",
-        "readTime": "10 min read"
-    },
-    {
-        "id": 4,
-        "title": "Optimizing Performance in React Applications",
-        "date": "December 28, 2025",
-        "excerpt": "Practical techniques for improving the performance of your React applications, from code splitting to memoization.",
-        "description": "Performance is crucial for user experience and business success. This guide covers advanced React optimization techniques that can significantly improve your application's speed and responsiveness. We'll explore code splitting strategies, lazy loading, memoization with React.memo and useMemo, virtualization for large lists, and bundle analysis. You'll learn how to identify performance bottlenecks using React DevTools and browser profiling tools, and implement solutions that scale with your application.",
-        "image": "https://picsum.photos/400/300?random=4",
-        "readTime": "8 min read"
-    },
-    {
-        "id": 5,
-        "title": "Introduction to Machine Learning with Python",
-        "date": "December 20, 2025",
-        "excerpt": "A beginner-friendly introduction to machine learning concepts and how to get started with Python libraries like scikit-learn.",
-        "description": "Machine learning is transforming industries across the globe, and Python has become the go-to language for ML development. This comprehensive introduction covers the fundamental concepts of supervised and unsupervised learning, data preprocessing, model evaluation, and deployment. We'll work with popular libraries like scikit-learn, pandas, and matplotlib to build real-world projects. By the end, you'll have the knowledge and confidence to start your journey in machine learning and apply these techniques to solve practical problems.",
-        "image": "https://picsum.photos/400/300?random=5",
-        "readTime": "12 min read"
+        "image": "/portfolio/assets/tether_and_flight.png",
+        "readTime": "3 min read"
     }
 ]

@@ -105,7 +105,7 @@ export default function Certifications() {
                 >
                     {/* Close button */}
                     <button
-                        onClick={closeLightbox}
+                        onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
                         className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-opacity hover:opacity-70"
                         style={{ backgroundColor: isDark ? "#000" : "#fff", color: isDark ? "#fff" : "#000" }}
                         aria-label="Close"

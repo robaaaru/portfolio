@@ -11,6 +11,7 @@ import BlogDetail from './components/ui/BlogDetail'
 import ExperienceList from './components/ui/ExperienceList'
 import Certifications from './components/ui/Certifications'
 import projects from './data/projects.json'
+import blogs from './data/blogs.json'
 
 // Detect in-app browsers (Messenger, Instagram, Facebook, etc.)
 const isInAppBrowser = () => {
@@ -59,6 +60,17 @@ export default function App() {
     }
 
     const selectedProject = getSelectedProject()
+
+    // Get selected blog for Header breadcrumb
+    const getSelectedBlog = () => {
+        if (location.pathname.startsWith('/blog/')) {
+            const id = parseInt(location.pathname.split('/')[2])
+            return blogs.find(b => b.id === id) || null
+        }
+        return null
+    }
+
+    const selectedBlog = getSelectedBlog()
 
     const [isVisible, setIsVisible] = useState(true)
     const isFirstRender = useRef(true)
@@ -172,7 +184,8 @@ export default function App() {
             activePage={activePage} 
             labels={pageLabels} 
             onNavigate={(path) => navigate(path)}
-            selectedProject={selectedProject} 
+            selectedProject={selectedProject}
+            selectedBlog={selectedBlog}
             onBack={() => navigate(-1)}
             isPlaying={isPlaying}
             toggleMusic={toggleMusic}

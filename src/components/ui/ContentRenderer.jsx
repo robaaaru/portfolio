@@ -57,7 +57,7 @@ function ImageBlock({ block }) {
 
 function HeadingBlock({ block }) {
     return (
-        <h2 className="text-xl font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
+        <h2 className="text-lg font-bold font-head mb-4 mt-8" style={{ color: "var(--foreground)" }}>
             {block.value}
         </h2>
     );
@@ -213,6 +213,19 @@ function LinkCardBlock({ block }) {
             onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "none")}
             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)")}
         >
+            {block.thumbnail && (
+                <div
+                    className="flex-shrink-0 rounded overflow-hidden"
+                    style={{ width: "4rem", height: "4rem", border: "1px solid var(--border)" }}
+                >
+                    <img
+                        src={block.thumbnail}
+                        alt=""
+                        className="w-full h-full object-cover"
+                        draggable={false}
+                    />
+                </div>
+            )}
             <div className="flex-1 min-w-0">
                 <span className="text-base font-semibold block truncate" style={{ color: "var(--foreground)" }}>
                     {block.title}
