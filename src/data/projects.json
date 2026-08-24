@@ -20,7 +20,7 @@
         "id": 3,
         "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
         "description": "A project designed to process, model, and visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
-        "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
+         "techStack": ["Python", "Pandas", "Three.js"],
         "url": "#",
         "ongoing": false
     },
@@ -28,7 +28,7 @@
         "id": 4,
         "title": "LuxeLane",
         "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
-        "techStack": ["Python", "Pandas", "Three.js"],
+        "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
         "url": "#",
         "ongoing": false
     },
