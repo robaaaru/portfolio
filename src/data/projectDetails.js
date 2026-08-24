@@ -73,7 +73,6 @@ const projectDetails = [
     {
         id: 1,
         content: [
-             
             {
                 type: "image",
                 src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/portfolio.png",
@@ -82,9 +81,9 @@ const projectDetails = [
             },
             {
                 type: "text",
-                value: "This portfolio website showcases my journey as a developer. Built with React and Vite for optimal performance, it features a modern design with smooth animations and responsive layout. "
+                value: "This portfolio website showcases my journey as a developer. Built with React and Vite for optimal performance, it features a modern design with smooth animations and responsive layout."
             },
-              {
+            {
                 type: "image",
                 src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/portfolio1.png",
                 alt: "Portfolio website projects section",
@@ -92,26 +91,25 @@ const projectDetails = [
             },
             {
                 type: "text",
-                value: "The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design.The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design."
+                value: "The site includes sections for my experience, certifications, blog posts, and detailed project showcases. It demonstrates my proficiency in front-end technologies and attention to user experience design."
             },
             {
-                type:"divider"
+                type: "divider"
             },
             {
-                type:"heading",
-                value:"Key features"
+                type: "heading",
+                value: "Key features"
             },
-              {
+            {
                 type: "list",
                 style: "unordered",
                 items: [
                     "Responsive design",
                     "Phone-like navigation",
                     "Easy dark-to-light mode toggle",
-                    "Minimalist/RetroUI design",
+                    "Minimalist/RetroUI design"
                 ]
-            },
-          
+            }
         ]
     },
     {
@@ -174,6 +172,42 @@ const projectDetails = [
         content: [
             {
                 type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/storm_tracker.png",
+                alt: "Storm tracker dashboard overview",
+                caption: "Storm tracker dashboard overview"
+            },
+            {
+                type: "text",
+                value: "This project focuses on processing and visualizing a long historical dataset of tropical cyclone rapid intensification events. The goal was to analyze trend patterns and identify conditions that can accelerate storm development."
+            },
+            {
+                type: "text",
+                value: "The system combines front-end visualization with backend data processing to present large-scale meteorological information in a user-friendly way. It highlights how programming, analysis, and storytelling can be combined to make climate and weather data more interpretable."
+            },
+            {
+                type: "divider"
+            },
+            {
+                type: "heading",
+                value: "Key Features"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "Historical storm data processing",
+                    "Rapid intensification analysis",
+                    "Interactive data visualization",
+                    "Weather insight dashboard"
+                ]
+            }
+        ]
+    },
+    {
+        id: 4,
+        content: [
+            {
+                type: "image",
                 src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/luxelane.png",
                 alt: "LuxeLane landing page and registration",
                 caption: "LuxeLane landing page and registration"
@@ -186,7 +220,7 @@ const projectDetails = [
                 type: "text",
                 value: "This project demonstrates my ability to build full-stack web applications using server-side technologies and create user-friendly e-commerce solutions."
             },
-             {
+            {
                 type: "divider"
             },
             {
@@ -202,16 +236,91 @@ const projectDetails = [
                     "Seamless booking",
                     "Secure payment processing"
                 ]
-            },
-
+            }
         ]
     },
     {
-        id: 4,
+        id: 5,
         content: [
             {
                 type: "text",
-                value: "AquaGuard is an IoT-based water conservation system that uses ultrasonic sensors to monitor water levels in real-time. The mobile app, built with Flutter, provides users with insights into their water usage patterns."
+                value: "This project looks at how rice prices respond to typhoon events in the Philippines. It combines data collection, transformation, and analysis into a structured workflow that makes the problem easier to understand and evaluate."
+            },
+            {
+                type: "text",
+                value: "The work centers around building a repeatable data pipeline and analytical story that connects climate impacts and economic outcomes. It shows how data engineering and analytics can support community-oriented decisions."
+            },
+            {
+                type: "divider"
+            },
+            {
+                type: "heading",
+                value: "Key Features"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "Data pipeline design",
+                    "Typhoon impact analysis",
+                    "Price trend evaluation",
+                    "Community-focused insight generation"
+                ]
+            }
+        ]
+    },
+    {
+        id: 6,
+        content: [
+            {
+                type: "text",
+                value: "The AI-powered system includes computer vision both for family closure and reunification. The system utilizes Unmanned Aerial Vehicles (UAVs) to scan for survivors and reunify evacuees in post-disaster scenarios."
+            },
+            {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/face_detection.PNG",
+                alt: "Offline-first webpage interface for facial detection and recognition",
+                caption: "Offline-first webpage interface for facial detection and recognition"
+            },
+            {
+                type: "text",
+                value: "The system also supports in-ground detection using computer vision models built around convolutional neural networks (CNN). It includes food and medicine detection using YOLO, OCR, and Google Gemini 2.5 to ensure proper distribution of consumables."
+            },
+            {
+                type: "image",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/food_detection.PNG",
+                alt: "Mobile-based food and medicine detection",
+                caption: "Mobile-based food and medicine detection"
+            },
+            {
+                type: "divider"
+            },
+            {
+                type: "heading",
+                value: "Key Features"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "Face detection and recognition",
+                    "Google Gemini 2.5 integration",
+                    "Aerial drone detection"
+                ]
+            },
+            {
+                type: "callout",
+                variant: "info",
+                value: "This system has been tested and validated in Tagulod, Pampanga. Furthermore, this system was used as a methodology to validate its corresponding published research paper."
+            }
+        ]
+    },
+    {
+        id: 7,
+        content: [
+            {
+                type: "text",
+                value: "AquaGuard is an IoT-based water conservation system that uses ultrasonic sensors to monitor water levels in real time. The mobile app, built with Flutter, provides users with insights into their water usage patterns."
             },
             {
                 type: "text",
@@ -221,8 +330,8 @@ const projectDetails = [
                 type: "text",
                 value: "This project combines hardware integration, mobile development, and data analytics to address environmental concerns and promote sustainable living."
             },
-               {
-                type:"divider"
+            {
+                type: "divider"
             },
             {
                 type: "heading",
@@ -234,58 +343,14 @@ const projectDetails = [
                 items: [
                     "In-board automated alarm system",
                     "Mobile app integration",
+                    "Real-time water level monitoring",
+                    "Sustainable resource insights"
                 ]
             },
             {
                 type: "callout",
                 variant: "warning",
-                value: "Unfortunately, no actual demonstration photos were found at the time of writing"
-            }
-        ]
-    },
-    {
-        id: 5,
-        content: [
-            {
-                type: "text",
-                value: "The AI-powered system includes computer vision both for family closure and reunification. The system utilizes Unmanned Aerial Vehicles (UAVs) to scan for survivors and reunify ecavuees in post-disaster scenarios"
-            },
-            {
-                type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/face_detection.PNG",
-                alt: "Offline-first webpage interface for facial detection and recognition",
-                caption: "Offline-first webpage interface for facial detection and recognition"
-            },
-            {
-                type: "text",
-                value: "The system also support in-ground detection using computer vision models built around Convulational Neural Networks (CNN). The system also include food and medicine detection using YOLO, OCR, and Google Gemini 2.5 to ensure proper distribution of consumables"
-            },
-              {
-                type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.0/public/assets/food_detection.PNG",
-                alt: "Mobile-based food and medicine detection",
-                caption: "Mobile-based food and medicine detection"
-            },
-            {
-                type:"divider"
-            },
-            {
-                type: "heading",
-                value: "Key Features"
-            },
-            {
-                type: "list",
-                style: "unordered",
-                items: [
-                    "Face detection and Recognition",
-                    "Google Gemini 2.5 Integration",
-                    "Aerial Drone Detection"
-                ]
-            },
-            {
-                type: "callout",
-                variant: "info",
-                value: "This system has been tested and validated in Tagulod, Pampanga. Furthermore, this system was used as a methodology to validate its corresponding published research paper"
+                value: "No demonstration photos were available at the time of writing, but the system design and functionality were validated through the project workflow."
             }
         ]
     }

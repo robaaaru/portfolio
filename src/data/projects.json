@@ -1,12 +1,13 @@
 [
     {
         "id": 1,
-        "title": "Portfolio Website",
+        "title": "My Portfolio Website",
         "description": "A sleek, responsive portfolio built with modern web technologies to showcase my work and skills.",
         "techStack": ["React", "Tailwind CSS", "Vite"],
         "url": "#",
         "ongoing": false
     },
+    
     {
         "id": 2,
         "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
@@ -17,27 +18,44 @@
     },
     {
         "id": 3,
-        "title": "LuxeLane",
-        "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
+        "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
+        "description": "A project designed to process, model, and visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
         "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
         "url": "#",
         "ongoing": false
     },
     {
         "id": 4,
+        "title": "LuxeLane",
+        "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
+        "techStack": ["Python", "Pandas", "Three.js"],
+        "url": "#",
+        "ongoing": false
+    },
+    {
+     "id": 5,
+        "title": "Rice Price Analysis After Typhoons: A Data Pipeline",
+        "description": "A 6-month, community-powered build sprint for aspiring data builders. Made possible by Data Engineering Pilipinas",
+        "techStack": ["Python","SQL", "Pandas", "Data Analytics"],
+        "url": "#",
+        "ongoing": true
+    },
+    {
+        "id": 6,
+        "title": "AI-Powered Post-Disaster Resiliency System",
+        "description": "An AI-Integrated evacuation center for a community-led and sustainable post-disaster approach",
+        "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
+        "url": "#",
+        "ongoing": false
+    },
+     {
+        "id": 7,
         "title": "AquaGuard: A sensor-based water conservation solution",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Internet of Things", "Flutter"],
         "url": "#",
         "ongoing": false
-    },
-    {
-        "id": 5,
-        "title": "AI-Powered Post-Disaster Resiliency System",
-        "description": "An AI-Integrated evacuation center for a community-led and sustainable post-disaster approach",
-        "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
-        "url": "#",
-        "ongoing": true
     }
+   
 
 ]
