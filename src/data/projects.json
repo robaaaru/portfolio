@@ -13,14 +13,16 @@
         "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
         "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
         "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
+        "tags": ["Technological Institute of the Philippines"],
         "url": "#",
         "ongoing": false
     },
     {
         "id": 3,
         "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
-        "description": "A project designed to process, model, and visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
+        "description": "This project was made in partnership with the Manila Observatory designed to visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
          "techStack": ["Python", "Pandas", "Three.js"],
+        "tags": ["Ateneo Innovation Center"],
         "url": "#",
         "ongoing": false
     },
@@ -29,6 +31,7 @@
         "title": "LuxeLane",
         "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
         "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
+        "tags": ["Technological Institute of the Philippines"],
         "url": "#",
         "ongoing": false
     },
@@ -45,6 +48,7 @@
         "title": "AI-Powered Post-Disaster Resiliency System",
         "description": "An AI-Integrated evacuation center for a community-led and sustainable post-disaster approach",
         "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
+        "tags": ["Ateneo Innovation Center"],
         "url": "#",
         "ongoing": false
     },
@@ -53,6 +57,7 @@
         "title": "AquaGuard: A sensor-based water conservation solution",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Internet of Things", "Flutter"],
+        "tags": ["Technological Institute of the Philippines"],
         "url": "#",
         "ongoing": false
     }

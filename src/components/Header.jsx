@@ -1,7 +1,7 @@
 
 import {Breadcrumb, BreadcrumbItem,BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator} from "@/components/ui/breadcrumb"
 import { useEffect, useState } from "react"
-import { Play, Pause } from "lucide-react"
+import { Music2, Pause } from "lucide-react"
 import { toast } from "sonner"
 import { Link } from "react-router-dom"
 
@@ -92,7 +92,7 @@ export default function Header({ activePage = 0, labels = [], onNavigate, select
                             color: "#fff",
                         }}
                     >
-                        {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5" />}
+                        {isPlaying ? <Pause size={14} /> : <Music2 size={14} />}
                     </button>
                     <button
                         onClick={toggleTheme}

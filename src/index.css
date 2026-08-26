@@ -105,6 +105,8 @@ html, body {
   --muted-foreground: #5a5a5a;
   --accent: #fae583;
   --accent-foreground: #000;
+  --institution-tag-background: #b7e3df;
+  --institution-tag-foreground: #075e60;
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #000;
@@ -127,6 +129,8 @@ html, body {
   --muted-foreground: #a0a0a0;
   --accent: #fae583;
   --accent-foreground: #000;
+  --institution-tag-background: #3f7774;
+  --institution-tag-foreground: #e1f3f1;
   --destructive: #e63946;
   --destructive-foreground: #fff;
   --border: #3a3a3a;

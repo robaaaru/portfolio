@@ -75,7 +75,7 @@ const projectDetails = [
         content: [
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/portfolio.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/portfolio.png",
                 alt: "Portfolio website homepage",
                 caption: "Homepage of the portfolio website"
             },
@@ -85,7 +85,7 @@ const projectDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/portfolio1.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/portfolio1.png",
                 alt: "Portfolio website projects section",
                 caption: "Mobile view of homepage and projects section"
             },
@@ -117,7 +117,7 @@ const projectDetails = [
         content: [
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/vrsos.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/vrsos.png",
                 alt: "VRSOS virtual lab environment",
                 caption: "The virtual chemistry lab in VRSOS"
             },
@@ -135,7 +135,7 @@ const projectDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/vrsos1.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/vrsos1.png",
                 alt: "VRSOS instructor monitoring dashboard",
                 caption: "Instructor monitoring dashboard"
             },
@@ -172,7 +172,7 @@ const projectDetails = [
         content: [
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/storm_tracker.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/storm_track.png",
                 alt: "Storm tracker dashboard overview",
                 caption: "Storm tracker dashboard overview"
             },
@@ -208,7 +208,7 @@ const projectDetails = [
         content: [
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/luxelane.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/luxelane.png",
                 alt: "LuxeLane landing page and registration",
                 caption: "LuxeLane landing page and registration"
             },
@@ -278,7 +278,7 @@ const projectDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/face_detection.PNG",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/face_detection.PNG",
                 alt: "Offline-first webpage interface for facial detection and recognition",
                 caption: "Offline-first webpage interface for facial detection and recognition"
             },
@@ -288,7 +288,7 @@ const projectDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/food_detection.PNG",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/food_detection.PNG",
                 alt: "Mobile-based food and medicine detection",
                 caption: "Mobile-based food and medicine detection"
             },

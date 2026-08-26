@@ -77,7 +77,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/c2.jpg",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/c2.jpg",
                 alt: "Catalyst Collider Design Challenge venue",
                 caption: "The competition floor at T.I.P Quezon City"
             },
@@ -91,7 +91,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/vrsos_blog_picture.PNG",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/vrsos_blog_picture.PNG",
                 alt: "Development of chemistry lab assets in Blender",
                 caption: "Development of chemistry lab assets in Blender"
             },
@@ -101,13 +101,9 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/vrsos_blogs_picture1.jpeg",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/vrsos_blogs_picture1.jpeg",
                 alt: "Industry matchmaking pitch",
                 caption: "Industry matchmaking pitch"
-            },
-             {
-                type: "text",
-                value: "One of the most significant moments of the challenge was the presentation stage, where we pitched our project to over 40 industry partners. Standing in front of professionals from various fields and articulating the value, functionality, and vision behind the product was a different kind of pressure than anything I had faced in a classroom setting. It sharpened how I communicate ideas, how I frame problems, and how I respond to critical questions on the spot."
             },
             {
                 type:"text",
@@ -125,7 +121,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/blogs_dost_picture1.jpeg",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/blogs_dost_picture1.jpeg",
                 alt: "Animation still - the tether",
                 caption: "VRSOS Exhibition Booth"
             },
@@ -135,7 +131,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/dost_blogs_picture.jpeg",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/dost_blogs_picture.jpeg",
                 alt: "VR Demo to Students",
                 caption: "VR Demo to Students"
             },
@@ -164,7 +160,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/tether_and_flight.png",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/tether_and_flight.png",
                 alt: "A tether and flight",
                 caption: "A snapshot of the animation"
             },
@@ -174,7 +170,7 @@ const blogDetails = [
             },
             {
                 type: "image",
-                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.1/public/assets/storyboarding.PNG",
+                src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/storyboarding.PNG",
                 alt: "One of my storyboard screenshots",
                 caption: "One of my storyboard screenshots"
             },

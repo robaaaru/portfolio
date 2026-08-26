@@ -1,7 +1,8 @@
 import { Badge } from "@/components/retroui/Badge";
+import { Lightbulb } from "lucide-react";
 import projects from "@/data/projects.json";
 
-function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
+function ProjectCard({ title, description, techStack, tags = [], url, ongoing, onClick }) {
     const handleClick = (e) => {
         e.preventDefault();
         onClick();
@@ -20,8 +21,8 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
             onMouseEnter={(e) => e.currentTarget.style.boxShadow = "none"}
             onMouseLeave={(e) => e.currentTarget.style.boxShadow = "2px 2px 0 0 var(--card-border)"}
         >
-            <div className="flex items-start gap-2 mb-2">
-                <h3 className="text-lg font-semibold font-head flex-1" style={{ color: "var(--foreground)" }}>
+            <div className="flex items-start gap-2 mb-1">
+                <h3 className="text-lg font-semibold font-head flex-1 min-w-0" style={{ color: "var(--foreground)" }}>
                     {title}
                 </h3>
                 {ongoing && (
@@ -35,6 +36,21 @@ function ProjectCard({ title, description, techStack, url, ongoing, onClick }) {
                         In Progress
                     </span>
                 )}
+            </div>
+            <div className="flex flex-wrap gap-2 mb-2">
+                {tags.map((tag) => (
+                    <span
+                        key={tag}
+                        className="text-xs font-semibold px-2 py-0.5 rounded inline-flex items-center gap-1"
+                        style={{
+                            backgroundColor: "var(--institution-tag-background)",
+                            color: "var(--institution-tag-foreground)",
+                        }}
+                    >
+                        <Lightbulb size={12} aria-hidden="true" />
+                        {tag}
+                    </span>
+                ))}
             </div>
             <p className="text-base mb-3" style={{ color: "var(--muted-foreground)" }}>
                 {description}

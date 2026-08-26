@@ -14,12 +14,13 @@
     "id": 2,
     "institution": "Ateneo De Manila University (Innovation Center)",
     "role": "Software Engineer Intern",
-    "date": "Jan 2026 - Present",
+    "date": "Jan 2026 - Apr 2026",
     "image": "https://placehold.co/128x128?text=Ateneo",
     "responsibilities": [
       "Designed and implemented AI-driven solutions for post-disaster scenarios. Utilizing InsightFace for facial recognition and ArcFace for face detection, the project ensures evacuee reunification in case of disaster",
+      "Developed a storm visualization tool for typhoon rapid intensifaction",
       "Developed computer vision technologies for agricultural applications by integrating a YOLO model to outdoor aquaponics for discoloration and pest detection",
-      "Co-authored the project's corresponding research paper for publication"
+      "Co-authored the projects' corresponding research paper for publication"
     ]
   }
   

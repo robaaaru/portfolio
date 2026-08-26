@@ -97,7 +97,7 @@ export default function Home() {
                             className="text-sm font-medium"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Developer & Tech Enthusiast
+                            Software and Data Specialist
                         </span>
                     </div>
 
@@ -105,18 +105,10 @@ export default function Home() {
                         className="text-sm md:text-base mb-4 leading-relaxed"
                         style={{ color: "var(--muted-foreground)" }}
                     >
-                        A tech enthusiast from Antipolo City, currently studying at the 
-                        Technological Institute of the Philippines. I'm passionate about 
-                        building solutions that tackle real-world challenges.
+                       A tech enthusiast from Antipolo City studying at the Technological Institute of the Philippines. I build impactful solutions across diverse domains, from agriculture to meteorology, driven by a passion for leveraging technology to make the world a better place.
                     </p>
 
-                    <p 
-                        className="text-sm md:text-base leading-relaxed"
-                        style={{ color: "var(--muted-foreground)" }}
-                    >
-                        I learn through hands-on experience and continuous improvement — 
-                        always eager to grow my skills and contribute to meaningful projects.
-                    </p>
+                 
 
                     {/* Social Links */}
                     <div className="flex gap-4 mt-6 justify-center md:justify-start">
