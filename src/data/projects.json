@@ -13,7 +13,7 @@
         "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
         "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
         "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
-        "tags": ["Technological Institute of the Philippines"],
+        "tags": ["TIP QC"],
         "url": "#",
         "ongoing": false
     },
@@ -22,7 +22,7 @@
         "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
         "description": "This project was made in partnership with the Manila Observatory designed to visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
          "techStack": ["Python", "Pandas", "Three.js"],
-        "tags": ["Ateneo Innovation Center"],
+        "tags": ["Ateneo Innovation Center", "Manila Observatory"],
         "url": "#",
         "ongoing": false
     },
@@ -31,7 +31,7 @@
         "title": "LuxeLane",
         "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
         "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
-        "tags": ["Technological Institute of the Philippines"],
+        "tags": ["TIP QC"],
         "url": "#",
         "ongoing": false
     },
@@ -57,7 +57,7 @@
         "title": "AquaGuard: A sensor-based water conservation solution",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Internet of Things", "Flutter"],
-        "tags": ["Technological Institute of the Philippines"],
+        "tags": ["TIP QC"],
         "url": "#",
         "ongoing": false
     }
