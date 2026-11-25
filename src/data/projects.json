@@ -10,24 +10,14 @@
     
     {
         "id": 2,
-        "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
-        "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
-        "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
-        "tags": ["TIP QC"],
+        "title": "Muffler Shop Analytics",
+        "description": "An end-to-end analytics platform for a real muffler shop, connecting mobile sales logging to business intelligence dashboards.",
+        "techStack": ["React Native", "FastAPI", "JWT", "PostgreSQL", "dbt", "Power BI", "Docker", "Azure"],
         "url": "#",
         "ongoing": false
     },
     {
         "id": 3,
-        "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
-        "description": "This project was made in partnership with the Manila Observatory designed to visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
-         "techStack": ["Python", "Pandas", "Three.js"],
-        "tags": ["Ateneo Innovation Center", "Manila Observatory"],
-        "url": "#",
-        "ongoing": false
-    },
-    {
-        "id": 4,
         "title": "LuxeLane",
         "description": "A full-featured e-commerce platform with dynamic product displays and seamless checkout flow.",
         "techStack": ["HTML", "CSS", "JavaScript", "PHP"],
@@ -36,15 +26,33 @@
         "ongoing": false
     },
     {
-     "id": 5,
-        "title": "Rice Price Analysis After Typhoons: A Data Pipeline",
-        "description": "A 6-month, community-powered build sprint for aspiring data builders. Made possible by Data Engineering Pilipinas",
-        "techStack": ["Python","SQL", "Pandas", "Data Analytics"],
+        "id": 4,
+        "title": "3D Typhoon Tracker for Rapid Intensification Tracking",
+        "description": "This project was made in partnership with the Manila Observatory designed to visualize a dataset of nearly two centuries of tropical cyclone rapid intensification.",
+        "techStack": ["Python", "Pandas", "Three.js"],
+        "tags": ["Ateneo Innovation Center", "Manila Observatory"],
         "url": "#",
-        "ongoing": true
+        "ongoing": false
+    },
+    {
+        "id": 5,
+        "title": "Rice Price Analysis After Typhoons",
+        "description": "A reproducible data pipeline combining Philippine typhoon warnings and province-level rice prices to identify areas worth monitoring.",
+        "techStack": ["Python", "SQL", "Pandas", "Data Analytics"],
+        "url": "#",
+        "ongoing": false
     },
     {
         "id": 6,
+        "title": "VRSOS: A Virtual Reality Safety Oriented Simulation",
+        "description": "An immersive VR Chemistry Lab featuring AI-driven performance assessment and real-time instructor monitoring.",
+        "techStack": ["Unity", "C#", "Blender", "Machine Learning", "WebRTC"],
+        "tags": ["TIP QC"],
+        "url": "#",
+        "ongoing": false
+    },
+    {
+        "id": 7,
         "title": "AI-Powered Post-Disaster Resiliency System",
         "description": "An AI-Integrated evacuation center for a community-led and sustainable post-disaster approach",
         "techStack": ["Python", "AI","Computer Vision", "Data Analytics", "Internet of Things"],
@@ -53,7 +61,7 @@
         "ongoing": false
     },
      {
-        "id": 7,
+        "id": 8,
         "title": "AquaGuard: A sensor-based water conservation solution",
         "description": "An IoT water management system using ultrasonic sensors to monitor levels and promote conservation.",
         "techStack": ["Internet of Things", "Flutter"],

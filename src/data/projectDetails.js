@@ -116,6 +116,84 @@ const projectDetails = [
         id: 2,
         content: [
             {
+                type: "text",
+                value: "A real muffler shop uses this end-to-end analytics system to log actual sales from a React Native mobile app and view business performance in Power BI."
+            },
+            {
+                type: "heading",
+                value: "Mobile Sales App"
+            },
+            {
+                type: "gallery",
+                images: [
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/reactapplication.png",
+                        alt: "Muffler shop mobile sales application",
+                        caption: "Sales entry app"
+                    },
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/brandxservice.png",
+                        alt: "Muffler shop service screen",
+                        caption: "Service selection"
+                    }
+                ]
+            },
+            {
+                type: "heading",
+                value: "System Architecture"
+            },
+            {
+                type: "text",
+                value: "The mobile app sends sales to a JWT-protected FastAPI service, which stores the operational data in Azure PostgreSQL. dbt transforms the raw data into 9 analytics views in a separate schema for Power BI. The Dockerized services are stored in Azure Container Registry and run on an Azure VM with CI/CD."
+            },
+            {
+                type: "heading",
+                value: "API and Data Integrity"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "A normalized schema separates transactions, orders, services, and motors. Per-order order_cost captures services whose price varies by job size.",
+                    "The API validates inputs and calculates total_cost. It flushes to obtain generated IDs, then commits once so a sale is not partially saved.",
+                    "Services and motors cannot be deleted while they are in use, and every endpoint requires a valid JWT.",
+                    "Batch fetching and joinedload avoid N+1 queries.",
+                    "User-provided created_at supports retroactive sales logging, and order deletion cascades to its dependent records."
+                ]
+            },
+            {
+                type: "heading",
+                value: "Power BI Dashboards"
+            },
+            {
+                type: "gallery",
+                images: [
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/page1pbi.png",
+                        alt: "Muffler shop Power BI dashboard, page one",
+                        caption: "Dashboard overview"
+                    },
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/pag2pbi.png",
+                        alt: "Muffler shop Power BI dashboard, page two",
+                        caption: "Additional dashboard insights"
+                    }
+                ]
+            },
+            {
+                type: "heading",
+                value: "Analytics Metric Correctness"
+            },
+            {
+                type: "text",
+                value: "The analytics sum line_revenue rather than total_cost to avoid double-counting order totals."
+            }
+        ]
+    },
+    {
+        id: 6,
+        content: [
+            {
                 type: "image",
                 src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.2/public/assets/vrsos.png",
                 alt: "VRSOS virtual lab environment",
@@ -168,7 +246,7 @@ const projectDetails = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         content: [
             {
                 type: "image",
@@ -179,6 +257,25 @@ const projectDetails = [
             {
                 type: "text",
                 value: "This project focuses on processing and visualizing a long historical dataset of tropical cyclone rapid intensification events. The goal was to analyze trend patterns and identify conditions that can accelerate storm development."
+            },
+            {
+                type: "heading",
+                value: "Dashboard Views"
+            },
+            {
+                type: "gallery",
+                images: [
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/typhoondashboard.png",
+                        alt: "Typhoon rapid intensification dashboard",
+                        caption: "Typhoon dashboard overview"
+                    },
+                    {
+                        src: "https://cdn.jsdelivr.net/gh/robaaaru/portfolio@v1.3/public/assets/typhoondashboard1.png",
+                        alt: "Additional typhoon dashboard view",
+                        caption: "Additional dashboard view"
+                    }
+                ]
             },
             {
                 type: "text",
@@ -204,7 +301,7 @@ const projectDetails = [
         ]
     },
     {
-        id: 4,
+        id: 3,
         content: [
             {
                 type: "image",
@@ -244,33 +341,81 @@ const projectDetails = [
         content: [
             {
                 type: "text",
-                value: "This project looks at how rice prices respond to typhoon events in the Philippines. It combines data collection, transformation, and analysis into a structured workflow that makes the problem easier to understand and evaluate."
-            },
-            {
-                type: "text",
-                value: "The work centers around building a repeatable data pipeline and analytical story that connects climate impacts and economic outcomes. It shows how data engineering and analytics can support community-oriented decisions."
-            },
-            {
-                type: "divider"
+                value: "A reproducible, two-year data pipeline that connects Philippine severe-weather warnings with province-level regular-milled rice prices. It identifies places with both high typhoon-warning exposure and recurring upward rice-price movement."
             },
             {
                 type: "heading",
-                value: "Key Features"
+                value: "The Question"
+            },
+            {
+                type: "text",
+                value: "Which provinces and regions experience high severe-warning exposure and large upward rice-price movements? This is a descriptive overlap analysis for screening and follow-up, not a causal study or an estimate of physical damage."
+            },
+            {
+                type: "heading",
+                value: "Data and Pipeline"
             },
             {
                 type: "list",
                 style: "unordered",
                 items: [
-                    "Data pipeline design",
-                    "Typhoon impact analysis",
-                    "Price trend evaluation",
-                    "Community-focused insight generation"
+                    "Combined 2024–2025 PAGASA tropical cyclone bulletins, PSA monthly rice-price workbooks, and provincial boundary data.",
+                    "Parsed hundreds of bulletin PDFs and normalized province names with a controlled allowlist.",
+                    "Used SHA-256 manifests and row hashes for resumable downloads and incremental, idempotent SQLite updates.",
+                    "Added source, transformation, and notebook-output validation to fail clearly when schemas or data are invalid.",
+                    "Generated province and region rankings, charts, KPI trends, and dashboard data from the same processed database."
                 ]
+            },
+            {
+                type: "heading",
+                value: "How the Analysis Works"
+            },
+            {
+                type: "text",
+                value: "For each province and storm, the pipeline retains the highest PAGASA signal reached. n_severe counts distinct storms that reached Signal 3 or higher. Rice-price upside swing measures the RMS of consecutive percentage rises; decreases and unchanged readings contribute zero."
+            },
+            {
+                type: "text",
+                value: "Provincial and regional results are placed in a strict 2×2 grid using above-median exposure and upside-swing thresholds. Regions use median provincial values and report regional size and the share of provinces in each category."
+            },
+            {
+                type: "heading",
+                value: "Key Findings"
+            },
+            {
+                type: "list",
+                style: "unordered",
+                items: [
+                    "CAR and Cagayan Valley remain high-overlap regions in both the full reading and monthly-sampling checks.",
+                    "The full analysis flags 12 provinces as high-severe-warning and high-rice-price-upside; 10 remain in that category when only monthly first readings are used.",
+                    "Bicol has strong overlap in the main result but does not remain stable in the monthly-sampling robustness check.",
+                    "Abra, Apayao, Aurora, Cagayan, Ifugao, Isabela, Mountain Province, and Quirino are among the robust province set."
+                ]
+            },
+            {
+                type: "heading",
+                value: "Robustness and Limitations"
+            },
+            {
+                type: "text",
+                value: "The monthly-sampling check retains 67 of 81 province classifications and 13 of 17 regional classifications. Sulu and Batanes lack usable regular-milled rice readings and are excluded from price comparisons; Batanes remains in warning analysis."
+            },
+            {
+                type: "text",
+                value: "The data covers only 2024–2025 and cannot establish causation, physical damage, or market responsibility for price changes. Median-based regional summaries and a 14-day repeat-hit rule are explicit analytical choices."
+            },
+            {
+                type: "heading",
+                value: "Skills Demonstrated"
+            },
+            {
+                type: "text",
+                value: "Python and pandas transformation, PDF and XLSX parsing, data validation, incremental ETL, SQLite modeling, KPI engineering, median-based segmentation, robustness testing, notebook automation, static dashboard serialization, and responsible analytical communication."
             }
         ]
     },
     {
-        id: 6,
+        id: 7,
         content: [
             {
                 type: "text",
@@ -316,7 +461,7 @@ const projectDetails = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         content: [
             {
                 type: "text",
